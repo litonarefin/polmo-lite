@@ -1,0 +1,185 @@
+Searching 1587 files for "add_shortcode"
+
+/home/liton/Desktop/www/html/products/themes/topclass/wp-content/themes/topclass/lib/shortcodes.php:
+    3  
+    4  //Slider Shortcode
+    5: add_shortcode( 'slider', 'jw_slider_shortcode');
+    6  
+    7  
+    .
+   99  
+  100  //Portfolio Shortcode
+  101: add_shortcode( 'portfolio', 'jw_portfolio_shortcode');
+  102  
+  103  
+  ...
+  188  
+  189  //pricing Shortcode
+  190: add_shortcode( 'pricing', 'jw_pricing_shortcode');
+  191  
+  192  function jw_pricing_shortcode( $atts, $content= null ){
+  ...
+  274  
+  275  //team Shortcode
+  276: add_shortcode( 'team', 'jw_team_shortcode');
+  277  
+  278  
+  ...
+  376  
+  377  //team Shortcode
+  378: add_shortcode( 'testimonial', 'jw_testimonial_shortcode');
+  379  
+  380  function jw_testimonial_shortcode( $atts, $content= null ){
+  ...
+  422  
+  423  //service Shortcode
+  424: add_shortcode( 'service', 'jw_service_shortcode');
+  425  
+  426  function jw_service_shortcode( $atts, $content= null ){
+
+/home/liton/Desktop/www/html/products/themes/topclass/wp-content/themes/topclass/lib/meta-box/inc/helpers.php:
+   22  		static function on_load()
+   23  		{
+   24: 			add_shortcode( 'rwmb_meta', array( __CLASS__, 'shortcode' ) );
+   25  		}
+   26  
+
+/home/liton/Desktop/www/html/products/themes/open/wp-content/themes/open-wp/lib/meta-box/inc/helpers.php:
+   22  		static function on_load()
+   23  		{
+   24: 			add_shortcode( 'rwmb_meta', array( __CLASS__, 'shortcode' ) );
+   25  		}
+   26  
+
+8 matches across 3 files
+
+
+Searching 1587 files for "wp_title"
+
+/home/liton/Desktop/www/html/products/themes/topclass/wp-content/themes/topclass/header-404.php:
+   15  	<meta charset="<?php bloginfo( 'charset' ); ?>">
+   16  	<meta name="viewport" content="width=device-width, initial-scale=1">
+   17: 	<title><?php wp_title( '|', true, 'right' ); ?></title>
+   18  	<link rel="profile" href="http://gmpg.org/xfn/11">
+   19  	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+/home/liton/Desktop/www/html/products/themes/topclass/wp-content/themes/topclass/header-page.php:
+   15  	<meta charset="<?php bloginfo( 'charset' ); ?>">
+   16  	<meta name="viewport" content="width=device-width, initial-scale=1">
+   17: 	<title><?php wp_title( '|', true, 'right' ); ?></title>
+   18  	<link rel="profile" href="http://gmpg.org/xfn/11">
+   19  	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+/home/liton/Desktop/www/html/products/themes/topclass/wp-content/themes/topclass/header-portfolio.php:
+   15  	<meta charset="<?php bloginfo( 'charset' ); ?>">
+   16  	<meta name="viewport" content="width=device-width, initial-scale=1">
+   17: 	<title><?php wp_title( '|', true, 'right' ); ?></title>
+   18  	<link rel="profile" href="http://gmpg.org/xfn/11">
+   19  	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+/home/liton/Desktop/www/html/products/themes/topclass/wp-content/themes/topclass/header.php:
+   15  	<meta charset="<?php bloginfo( 'charset' ); ?>">
+   16  	<meta name="viewport" content="width=device-width, initial-scale=1">
+   17: 	<title><?php wp_title( '|', true, 'right' ); ?></title>
+   18  	<link rel="profile" href="http://gmpg.org/xfn/11">
+   19  	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+/home/liton/Desktop/www/html/products/themes/topclass/wp-content/themes/topclass/landing-header.php:
+   14  	<meta charset="<?php bloginfo( 'charset' ); ?>">
+   15  	<meta name="viewport" content="width=device-width, initial-scale=1">
+   16: 	<title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
+   17  	<link rel="profile" href="http://gmpg.org/xfn/11">
+   18  	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+/home/liton/Desktop/www/html/products/themes/topclass/wp-content/themes/topclass/inc/extras.php:
+   37  
+   38  /**
+   39:  * Filters wp_title to print a neat <title> tag based on what is being viewed.
+   40   *
+   41   * @param string $title Default title text for current view.
+   ..
+   43   * @return string The filtered title.
+   44   */
+   45: function jwtheme_wp_title( $title, $sep ) {
+   46  	if ( is_feed() ) {
+   47  		return $title;
+   ..
+   66  	return $title;
+   67  }
+   68: add_filter( 'wp_title', 'jwtheme_wp_title', 10, 2 );
+   69  
+   70  /**
+
+/home/liton/Desktop/www/html/products/themes/open/wp-content/themes/open-wp/functions.php:
+  566  
+  567  
+  568: function jeweltheme_wp_title( $title, $sep ) {
+  569  	global $paged, $page;
+  570  
+  ...
+  589  	return $title;
+  590  
+  591: } // end jeweltheme_wp_title
+  592: add_filter( 'wp_title', 'jeweltheme_wp_title', 10, 2 );
+
+/home/liton/Desktop/www/html/products/themes/open/wp-content/themes/open-wp/header-404.php:
+   13  <meta charset="<?php bloginfo( 'charset' ); ?>">
+   14  <meta name="viewport" content="width=device-width, initial-scale=1">
+   15: <title><?php wp_title(); ?></title>
+   16  <meta name="author" content="Jewel Theme">
+   17  <link rel="profile" href="http://gmpg.org/xfn/11">
+
+/home/liton/Desktop/www/html/products/themes/open/wp-content/themes/open-wp/header-page.php:
+   12  <meta charset="<?php bloginfo( 'charset' ); ?>">
+   13  <meta name="viewport" content="width=device-width, initial-scale=1">
+   14: <title><?php wp_title( '|', true, 'right' ); ?></title>
+   15  <meta name="author" content="Jewel Theme">
+   16  <link rel="profile" href="http://gmpg.org/xfn/11">
+
+/home/liton/Desktop/www/html/products/themes/open/wp-content/themes/open-wp/header-portfolio.php:
+   13  <meta charset="<?php bloginfo( 'charset' ); ?>">
+   14  <meta name="viewport" content="width=device-width, initial-scale=1">
+   15: <title><?php wp_title( '|', true, 'right' ); ?></title>
+   16  <meta name="author" content="Jewel Theme">
+   17  <link rel="profile" href="http://gmpg.org/xfn/11">
+
+/home/liton/Desktop/www/html/products/themes/open/wp-content/themes/open-wp/header.php:
+   12  <meta charset="<?php bloginfo( 'charset' ); ?>">
+   13  <meta name="viewport" content="width=device-width, initial-scale=1">
+   14: <title><?php wp_title( '|', true, 'right' ); ?></title>
+   15  <meta name="author" content="Jewel Theme">
+   16  <link rel="profile" href="http://gmpg.org/xfn/11">
+
+/home/liton/Desktop/www/html/products/themes/open/wp-content/themes/open-wp/landing-header.php:
+   13  	<meta charset="<?php bloginfo( 'charset' ); ?>">
+   14  	<meta name="viewport" content="width=device-width, initial-scale=1">
+   15: 	<title><?php wp_title( '|', true, 'right' ); ?></title>
+   16  	<link rel="profile" href="http://gmpg.org/xfn/11">
+   17  	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+/home/liton/Desktop/www/html/products/themes/open/wp-content/themes/open-wp/inc/extras.php:
+   38  if ( ! function_exists( '_wp_render_title_tag' ) ) :
+   39  	/**
+   40: 	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
+   41  	 *
+   42  	 * @param string $title Default title text for current view.
+   ..
+   44  	 * @return string The filtered title.
+   45  	 */
+   46: 	function jeweltheme_wp_title( $title, $sep ) {
+   47  		if ( is_feed() ) {
+   48  			return $title;
+   ..
+   67  		return $title;
+   68  	}
+   69: 	add_filter( 'wp_title', 'jeweltheme_wp_title', 10, 2 );
+   70  endif;
+   71  
+   ..
+   78  	 */
+   79  	function jeweltheme_render_title() {
+   80: 		echo '<title>' . wp_title( '|', false, 'right' ) . "</title>\n";
+   81  	}
+   82  	add_action( 'wp_head', 'jeweltheme_render_title' );
+
+23 matches across 13 files
