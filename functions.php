@@ -409,3 +409,11 @@ function jeweltheme_polmo_register_required_plugins() {
     tgmpa( $plugins, $config );
 
 }
+
+
+//Initialize Polmo Lite Updater
+require 'inc/theme-update-checker.php';
+$example_update_checker = new JewelThemePolmoUpdater(
+	'polmo-lite', 
+	'http://demos.jeweltheme.com/theme-updates/polmo-lite.json' 
+);
