@@ -1,4 +1,4 @@
-![Polmo Free WordPress Theme](.images/logo.png)
+![Polmo Free WordPress Theme](blob/master/images/logo.png)
 
 # Polmo Free WordPress Theme
 * Tags: WordPress, Theme, Freebie, Business, Website, Design, Template,
