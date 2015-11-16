@@ -1,45 +1,59 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+![Polmo Free WordPress Theme](.images/logo.png)
 
-_s
-===
+# Polmo Free WordPress Theme
+* Tags: WordPress, Theme, Freebie, Business, Website, Design, Template,
+* Requires at least: WordPress 4.0+
+* Donate link: https://goo.gl/dko6p7
+* License: GPLv2 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+This is a simple WordPress Theme For any type of Business, Portfolio or Service based Websites. Polmo is one of the best Free WordPress Theme for user because of it's flexiblity and customization features. 
 
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A helpful 404 template.
-* A sample custom header implementation in `inc/custom-header.php` that can be activated by uncommenting one line in `functions.php` and adding the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/extras.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample CSS layouts in `layouts/` for a sidebar on either side of your content.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
+## Description
 
-Getting Started
----------------
+Polmo is a Theme which adjust with any type of Business, Service, Portfolio Websites. This Theme built with Bootstrap and coded with HTML5/CSS3. If you are looking for a Free WordPress Theme for your Website then Polmo is a winning choice for you and your business. This is a good looking Theme with user friendly design. 
 
-If you want to keep it simple, head over to http://underscores.me and generate your `_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
+## Installation
 
-If you want to set things up manually, download `_s` from GitHub. The first thing you want to do is copy the `_s` directory and change the name to something else (like, say, `megatherium`), and then you'll need to do a five-step find and replace on the name in all the templates.
+### Upload
 
-1. Search for `'_s'` (inside single quotations) to capture the text domain.
-2. Search for `_s_` to capture all the function names.
-3. Search for `Text Domain: _s` in style.css.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks.
-5. Search for `_s-` to capture prefixed handles.
+1. Download the latest [tagged archive](https://github.com/jeweltheme/polmo-lite/releases) (choose the "zip" option).
+2. Go to the __Appearence -> Themes 
+3. Click on Add New__ screen and click the __Upload__ tab.
+4. Now just click __Active__ button.
 
-OR
+### Manual
 
-* Search for: `'_s'` and replace with: `'megatherium'`
-* Search for: `_s_` and replace with: `megatherium_`
-* Search for: `Text Domain: _s` and replace with: `Text Domain: megatherium` in style.css.
-* Search for: <code>&nbsp;_s</code> and replace with: <code>&nbsp;Megatherium</code>
-* Search for: `_s-` and replace with: `megatherium-`
+1. Download the latest [tagged archive](https://github.com/jeweltheme/polmo-lite/releases) (choose the "zip" option).
+2. Unzip the archive.
+3. Copy the folder to your `/wp-content/themes/` directory.
+4. Go to the Themes screen and click __Activate__.
 
-Then, update the stylesheet header in `style.css` and the links in `footer.php` with your own information. Next, update or delete this readme.
+Check out the Codex for more information about [installing plugins manually](http://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation).
 
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+## Features of Polmo Theme
 
-Good luck!
+1. Flexible Design 
+2. More than Responsive
+3. Continuous Support & Updates
+4. Fantastic Portfolio
+5. Widget Ready 
+6. One Page Parallax
+7. Well-coded & SEO Friendly
+8. Full Width Slider
+9. Font Awesome Icons
+10. Sticky Header
+11. WPML Support
+12. Retina Ready
+13. Translation Ready
+
+## Theme Customizer 
+
+Polmo provides you a better customizer pannel, which make your work easy. You can customize your website and add widget from the customizer pannel. 
+
+![Polmo Free WordPress Theme Customizer](http://jeweltheme.com/wp-content/uploads/2015/11/polmo-customizer-pannel.png)
+
+## Polmo WordPress Theme looks like: 
+
+![Polmo Free Multipurpose WordPress Theme](http://jeweltheme.com/wp-content/uploads/2015/11/Polmo-Multipurpose-WordPress-Theme.jpg)
