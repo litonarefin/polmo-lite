@@ -1,4 +1,4 @@
-![Polmo Free WordPress Theme](images/logo.png)
+![Polmo Free WordPress Theme](http://wordpress.jeweltheme.com/polmo/wp-content/uploads/sites/2/2015/11/logo-1.png)
 
 # Polmo Free WordPress Theme
 * Tags: WordPress, Theme, Freebie, Business, Website, Design, Template,
