@@ -1,4 +1,4 @@
-![Polmo Free WordPress Theme](blob/master/images/logo.png)
+![Polmo Free WordPress Theme](images/logo.png)
 
 # Polmo Free WordPress Theme
 * Tags: WordPress, Theme, Freebie, Business, Website, Design, Template,
@@ -30,7 +30,6 @@ Polmo is a Theme which adjust with any type of Business, Service, Portfolio Webs
 3. Copy the folder to your `/wp-content/themes/` directory.
 4. Go to the Themes screen and click __Activate__.
 
-Check out the Codex for more information about [installing plugins manually](http://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation).
 
 ## Features of Polmo Theme
 
