@@ -90,7 +90,7 @@ if ( class_exists( 'WP_Customize_Panel' ) ){
 		));
 		/* LOGO	*/
 		$wp_customize->add_setting( 'jeweltheme_polmo_logo', array('sanitize_callback' => 'esc_url_raw'));
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'jeweltheme_polmo_logo', array(
 				'label'    => __( 'Logo', 'jeweltheme_polmo' ),
 				'section'  => 'title_tagline',
 				'settings' => 'jeweltheme_polmo_logo',
@@ -99,14 +99,53 @@ if ( class_exists( 'WP_Customize_Panel' ) ){
 
 
 		
+		/* Blog Section */
+		$wp_customize->add_section( 'jeweltheme_polmo_general_blog_section' , array(
+				'title'       => __( 'Blog Section', 'jeweltheme_polmo' ),
+				'priority'    => 31,
+				'panel' => 'panel_general'
+		));
+
+		/* Blog Title */
+		$wp_customize->add_setting( 'jeweltheme_polmo_general_blog_title', array('sanitize_callback' => 'jeweltheme_polmo_sanitize_text','default' => 'Welcome To <span>Polmo</span> Blog'));
+		$wp_customize->add_control( 'jeweltheme_polmo_general_blog_title', array(
+			'label'    => __( 'Blog Title', 'jeweltheme_polmo' ),
+			'section'  => 'jeweltheme_polmo_general_blog_section',
+			'settings' => 'jeweltheme_polmo_general_blog_title',
+			'priority'    => 1,
+			));		
+
+		/* Blog Description */
+		$wp_customize->add_setting( 'jeweltheme_polmo_general_blog_desc', array('sanitize_callback' => 'jeweltheme_polmo_sanitize_text','default' => 'Our Creative Blog Will keep you always Updated'));
+		$wp_customize->add_control( 'jeweltheme_polmo_general_blog_desc', array(
+			'label'    => __( 'Blog Title', 'jeweltheme_polmo' ),
+			'section'  => 'jeweltheme_polmo_general_blog_section',
+			'settings' => 'jeweltheme_polmo_general_blog_desc',
+			'priority'    => 1,
+			));
+
+		/* Banner Image	*/
+		$wp_customize->add_setting( 'jeweltheme_polmo_banner_image', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/background/blog.jpg'));
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'jeweltheme_polmo_banner_image', array(
+				'label'    => __( 'Blog Banner', 'jeweltheme_polmo' ),
+				'section'  => 'jeweltheme_polmo_general_blog_section',
+				'settings' => 'jeweltheme_polmo_banner_image',
+				'priority'    => 2,
+		)));
+
+
+
+
+
+		// Socials Section		
 		$wp_customize->add_section( 'jeweltheme_polmo_general_socials_section' , array(
 				'title'       => __( 'Socials', 'jeweltheme_polmo' ),
-				'priority'    => 31,
+				'priority'    => 32,
 				'panel' => 'panel_general'
 		));
 		
 		/* facebook */
-		$wp_customize->add_setting( 'jeweltheme_polmo_socials_facebook', array('sanitize_callback' => 'esc_url_raw','default' => '1,203'));
+		$wp_customize->add_setting( 'jeweltheme_polmo_socials_facebook', array('sanitize_callback' => 'jeweltheme_polmo_sanitize_text','default' => '1,203'));
 		$wp_customize->add_control( 'jeweltheme_polmo_socials_facebook', array(
 				'label'    => __( 'Facebook Likes', 'jeweltheme_polmo' ),
 				'section'  => 'jeweltheme_polmo_general_socials_section',
@@ -114,7 +153,7 @@ if ( class_exists( 'WP_Customize_Panel' ) ){
 				'priority'    => 1,
 		));
 		/* twitter */
-		$wp_customize->add_setting( 'jeweltheme_polmo_socials_twitter', array('sanitize_callback' => 'esc_url_raw','default' => '2,305'));
+		$wp_customize->add_setting( 'jeweltheme_polmo_socials_twitter', array('sanitize_callback' => 'jeweltheme_polmo_sanitize_text','default' => '2,305'));
 		$wp_customize->add_control( 'jeweltheme_polmo_socials_twitter', array(
 				'label'    => __( 'Twitter Followers', 'jeweltheme_polmo' ),
 				'section'  => 'jeweltheme_polmo_general_socials_section',
@@ -122,7 +161,7 @@ if ( class_exists( 'WP_Customize_Panel' ) ){
 				'priority'    => 2,
 		));
 		/* dribbble */
-		$wp_customize->add_setting( 'jeweltheme_polmo_socials_dribbble', array('sanitize_callback' => 'esc_url_raw','default' => '1,101'));
+		$wp_customize->add_setting( 'jeweltheme_polmo_socials_dribbble', array('sanitize_callback' => 'jeweltheme_polmo_sanitize_text','default' => '1,101'));
 		$wp_customize->add_control( 'jeweltheme_polmo_socials_dribbble', array(
 				'label'    => __( 'Dribbble Fans', 'jeweltheme_polmo' ),
 				'section'  => 'jeweltheme_polmo_general_socials_section',

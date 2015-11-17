@@ -63,21 +63,6 @@
 					<li><a href="#blog">Blog</a></li>
 					<li><a href="#contact">Contact us</a></li>
 				</ul>
-				
-				<?php 
-				// wp_nav_menu( array(
-				// 	'menu'              => 'primary',
-				// 	'theme_location'    => 'primary',
-				// 	'depth'             => 4,
-				// 	'container'         => 'ul',
-				// 	'fallback_cb'       => 'wp_page_menu',
-				// 	'container_class'   => 'nav navbar-nav',
-				// 	'container_id'    	=> 'main-menu',
-				// 	'menu_class'      	=> 'nav navbar-nav',
-				// 	'menu_id'         	=> '',
-				// 	)
-				// );
-				?>
 			</nav> <!-- /.navbar-collapse  -->
 
 		</div><!-- /.container -->

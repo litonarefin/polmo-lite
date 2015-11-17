@@ -71,14 +71,22 @@
 		</div><!-- /.container -->
 	</header><!-- /#masthead -->
 
+<?php
+$jeweltheme_polmo_general_blog_title = get_theme_mod('jeweltheme_polmo_general_blog_title',__('Welcome To <span>Polmo</span> Blog','jeweltheme_polmo'));
+$jeweltheme_polmo_general_blog_desc = get_theme_mod('jeweltheme_polmo_general_blog_desc',__('Our Creative Blog Will keep you always Updated','jeweltheme_polmo'));
 
+?>
 
 	<section id="page-head" class="page-head text-center" data-stellar-background-ratio="0.1" data-stellar-vertical-offset="0">
 		<div class="head-overlay">
 			<div class="section-padding">
 				<div class="container">
-					<h1 class="page-title">Welcome To <span>Polmo</span> Blog</h1><!-- /.page-title -->
-					<p class="page-description">Our Creative Blog Will keep you always Updated</p><!-- /.page-description -->
+					<h1 class="page-title">
+						<?php echo $jeweltheme_polmo_general_blog_title; ?>
+					</h1><!-- /.page-title -->
+					<p class="page-description">
+						<?php echo $jeweltheme_polmo_general_blog_desc; ?>
+					</p><!-- /.page-description -->
 				</div><!-- /.container -->
 			</div><!-- /.section-padding -->
 		</div><!-- /.head-overlay -->
