@@ -208,7 +208,7 @@ if ( class_exists( 'WP_Customize_Panel' ) ){
 		));
 
 		/* Slider Image 1 */
-		$wp_customize->add_setting( 'jeweltheme_polmo_slider_image1', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/slider/3.jpg'));
+		$wp_customize->add_setting( 'jeweltheme_polmo_slider_image1', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/slider/1.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'polmo_image_slider1', array(
 			'label'    => __( 'Slider Image 1', 'jeweltheme_polmo' ),
 			'section'  => 'jeweltheme_polmo_slider_1',
