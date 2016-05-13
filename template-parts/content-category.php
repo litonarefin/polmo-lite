@@ -26,7 +26,7 @@
             <div class="media-content">
                 <div class="post-image">
                     <?php if ( has_post_thumbnail() ) { 
-                        $url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'blog-thumb' );
+                        $url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'polmo-blog-thumb' );
                         ?>
                         <img src="<?php echo esc_url( $url[0] ); ?>" alt="<?php the_title();?>" />
                     <?php } ?>

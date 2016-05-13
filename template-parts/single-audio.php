@@ -17,36 +17,26 @@
         <div class="media-body">
             <?php the_title( sprintf( '<h2 class="entry-title">', esc_url( get_permalink() ) ), '</h2>' ); ?>
 
-            <?php echo jeweltheme_polmo_post_meta_social();?>
-
             <?php echo jeweltheme_polmo_post_meta();?>
 
         </div>
     </div><!-- /.post-head -->
 
     <div class="post-content">
-    
-        <?php 
-          $audio_code = jeweltheme_meta( '_jeweltheme_polmo_audio_code' ); 
-          if($audio_code ){?>
-            <div class="post-thumbnail">
-                <?php echo  $audio_code; ?>
-            </div>
-        <?php } ?>
 
         <div class="entry-content">
             <?php the_content(); ?>
             
             <?php
                 wp_link_pages( array(
-                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'jeweltheme_memorials' ),
+                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'polmo-lite' ),
                     'after'  => '</div>',
                 ) );
             ?>
         </div><!-- .entry-content -->
         
         <?php 
-        $tags_list = get_the_tag_list( '', esc_html__( ', ', 'jeweltheme_polmo' ) );
+        $tags_list = get_the_tag_list( '', esc_html__( ', ', 'polmo-lite' ) );
         if( $tags_list ){ ?>
             <div class="post-tag">
                 <ul class="tag-list">

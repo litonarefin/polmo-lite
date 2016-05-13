@@ -23,9 +23,9 @@
  */
 function jeweltheme_polmo_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'jeweltheme_polmo_custom_header_args', array(
-		'default-image'          => '',
+		'default-image'          =>  get_template_directory_uri() . '/images/background/blog.jpg',
 		'default-text-color'     => '000000',
-		'width'                  => 1000,
+		'width'                  => 1200,
 		'height'                 => 250,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'jeweltheme_polmo_header_style',
@@ -111,6 +111,9 @@ if ( ! function_exists( 'jeweltheme_polmo_admin_header_image' ) ) :
  * @see jeweltheme_polmo_custom_header_setup().
  */
 function jeweltheme_polmo_admin_header_image() {
+	$jeweltheme_polmo_general_blog_title = get_theme_mod('jeweltheme_polmo_general_blog_title',esc_html__('Welcome To <span>Polmo</span> Blog','polmo-lite'));
+	$jeweltheme_polmo_general_blog_desc = get_theme_mod('jeweltheme_polmo_general_blog_desc',esc_html__('Our Creative Blog Will keep you always Updated','polmo-lite'));
+
 ?>
 	<div id="headimg">
 		<h1 class="displaying-header-text">
@@ -121,6 +124,21 @@ function jeweltheme_polmo_admin_header_image() {
 		<img src="<?php header_image(); ?>" alt="">
 		<?php endif; ?>
 	</div>
+
+	<section id="page-head" class="page-head text-center" style="background: url("<?php echo header_image(); ?>") no-repeat center top fixed;" data-stellar-background-ratio="0.1" data-stellar-vertical-offset="0">
+		<div class="head-overlay">
+			<div class="section-padding">
+				<div class="container">
+					<h1 class="page-title">
+						<?php echo  wp_kses_post($jeweltheme_polmo_general_blog_title); ?>
+					</h1><!-- /.page-title -->
+					<p class="page-description">
+						<?php echo esc_attr($jeweltheme_polmo_general_blog_desc ); ?>
+					</p><!-- /.page-description -->
+				</div><!-- /.container -->
+			</div><!-- /.section-padding -->
+		</div><!-- /.head-overlay -->
+	</section><!-- /#page-head -->
 <?php
 }
 endif; // jeweltheme_polmo_admin_header_image

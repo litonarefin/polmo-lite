@@ -1,5 +1,5 @@
 <?php
-$jeweltheme_polmo_blog_heading = get_theme_mod('jeweltheme_polmo_blog_heading',__('<span>Our</span> Latest Blog Posts','jeweltheme_polmo'));
+$jeweltheme_polmo_blog_heading = get_theme_mod('jeweltheme_polmo_blog_heading',__('<span>Our</span> Latest Blog Posts','polmo-lite'));
 
 ?>
   <!-- Latest Blog Post -->
@@ -11,7 +11,7 @@ $jeweltheme_polmo_blog_heading = get_theme_mod('jeweltheme_polmo_blog_heading',_
           <div class="section-top wow animated fadeInUp" data-wow-delay=".5s">
             <?php if ( !empty($jeweltheme_polmo_blog_heading) ){ ?>
               <h2 class="section-title">
-                <?php echo $jeweltheme_polmo_blog_heading; ?>
+                <?php echo  $jeweltheme_polmo_blog_heading; ?>
               </h2><!-- /.section-title -->
             <?php } ?>
           </div><!-- /.section-top -->
@@ -35,7 +35,7 @@ $jeweltheme_polmo_blog_heading = get_theme_mod('jeweltheme_polmo_blog_heading',_
                     <article class="type-post post wow animated fadeInUp" data-wow-delay=".35s">
                       <div class="post-thumbnail">
                         <?php if ( has_post_thumbnail() ) { 
-                          $url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'home-blog' );
+                          $url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'polmo-home-blog' );
                           ?>
                           <img src="<?php echo esc_url( $url[0] ); ?>" alt="<?php the_title();?>" />
                           <?php } ?>
@@ -62,7 +62,7 @@ $jeweltheme_polmo_blog_heading = get_theme_mod('jeweltheme_polmo_blog_heading',_
 
             <div class="btn-container text-center">
               <a class="btn more" href="<?php echo jeweltheme_polmo_get_blog_link();?>">
-                <?php echo __("View Blog","jeweltheme_polmo");?>
+                <?php echo esc_html__("View Blog","polmo-lite");?>
               </a>
             </div><!-- /.btn-container -->
           </div><!-- /.section-details -->

@@ -16,8 +16,6 @@
         <div class="media-body">
             <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-            <?php echo jeweltheme_polmo_post_meta_social();?>
-
             <?php echo jeweltheme_polmo_post_meta();?>
 
         </div>
@@ -26,18 +24,18 @@
     <div class="post-content">
         <div class="post-thumbnail">
             <?php if ( has_post_thumbnail() ) { 
-                $url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'blog-thumb' );
+                $url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'polmo-blog-thumb' );
                 ?>
                 <img src="<?php echo esc_url( $url[0] ); ?>" alt="<?php the_title();?>" />
             <?php } ?>
         </div><!-- /.post-thumbnail -->
         <p class="entry-content">
             <?php echo wp_trim_words( get_the_content(), 75, ' '  ); ?>
-            <a class="read-more" href="<?php the_permalink();?>"><?php echo esc_attr('Read More...','jeweltheme_polmo');?></a>
+            <a class="read-more" href="<?php the_permalink();?>"><?php echo esc_attr('Read More...','polmo-lite');?></a>
         </p><!-- /.entry-content -->
 
         <?php 
-        $tags_list = get_the_tag_list( '', esc_html__( ', ', 'jeweltheme_polmo' ) );
+        $tags_list = get_the_tag_list( '', esc_html__( ', ', 'polmo-lite' ) );
         if( $tags_list ){ ?>
             <div class="post-tag">
                 <ul class="tag-list">

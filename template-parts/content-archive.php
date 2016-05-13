@@ -10,7 +10,7 @@
 
     <?php if ( has_post_thumbnail() ) { ?>
         <div class="post-thumbnail">
-            <?php the_post_thumbnail('blog-thumb'); ?>
+            <?php the_post_thumbnail('polmo-blog-thumb'); ?>
         </div>
     <?php } ?>
 
@@ -30,18 +30,15 @@
             
             <?php
             wp_link_pages( array(
-                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'jwtheme' ),
+                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'polmo-lite' ),
                 'after'  => '</div>',
                 ) );
                 ?>
         </div><!-- /.entry -->
 
-        <?php // echo jwtheme_post_meta_social();?>
-
     </div><!-- /.post-content --> 
 </article><!-- /.post -->
 
-<?php // echo jwtheme_author_bio();?>
 
 <?php
     // If comments are open or we have at least one comment, load up the comment template

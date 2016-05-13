@@ -13,15 +13,32 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
+
 function jeweltheme_polmo_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author.
+	// Adds a class of custom-background-image to sites with a custom background image.
+	if ( get_background_image() ) {
+		$classes[] = 'page-head';
+	}
+
+	// Adds a class of group-blog to sites with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
+	}
+
+	// Adds a class of no-sidebar to sites without active sidebar.
+	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+		$classes[] = 'no-sidebar';
+	}
+
+	// Adds a class of hfeed to non-singular pages.
+	if ( ! is_singular() ) {
+		$classes[] = 'hfeed';
 	}
 
 	return $classes;
 }
 add_filter( 'body_class', 'jeweltheme_polmo_body_classes' );
+
 
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	/**
@@ -49,7 +66,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 		// Add a page number if necessary.
 		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( esc_html__( 'Page %s', 'jeweltheme_polmo' ), max( $paged, $page ) );
+			$title .= " $sep " . sprintf( esc_htmlesc_html__( 'Page %s', 'polmo-lite' ), max( $paged, $page ) );
 		}
 
 		return $title;
@@ -73,5 +90,8 @@ endif;
 
 // Footer Credit Link
 function jeweltheme_polmo_footer_credit(){ ?>
-	<div class="copy-right pull-right">© <a href="<?php echo esc_url("http://demos.jeweltheme.com/polmo","jeweltheme_polmo");?>" target="_blank">Polmo</a> 2015 - All Reserves. Developed by <a href="http://jeweltheme.com/" target="_blank"><?php echo __("Jewel Theme","jeweltheme_polmo");?></a><?php echo __(". Designed by","jeweltheme_polmo");?> <a href="<?php echo esc_url('https://www.facebook.com/dinmuhammadsumon','jeweltheme_polmo');?>" target="_blank"><?php echo __('D.M.S','jeweltheme_polmo');?></a></div>
+	<div class="copy-right pull-right">&copy; <?php echo bloginfo('name');?> <?php echo date_i18n('Y'); ?>
+		<?php echo esc_html__(" - Designed and Developed by","polmo-lite");?> 
+		<a href="<?php echo esc_url("https://github.com/jeweltheme/polmo-lite","polmo-lite");?>" target="_blank"><?php echo esc_html__("Jewel Theme","polmo-lite");?></a> 
+	</div>
 <?php } 

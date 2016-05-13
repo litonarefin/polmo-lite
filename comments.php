@@ -27,6 +27,20 @@ if ( post_password_required() ) {
 			<?php comments_number( '0 Comments', '1 Comment', '% Comments' );?>
 		</h3>
 
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'polmo-lite' ); ?></h2>
+			<div class="nav-links">
+
+				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'polmo-lite' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'polmo-lite' ) ); ?></div>
+
+			</div><!-- .nav-links -->
+		</nav><!-- #comment-nav-above -->
+		<?php endif; // Check for comment navigation. ?>
+
+
+
 		<ul class="comment-list media-list">
 			<?php
 				wp_list_comments( array(
@@ -35,31 +49,20 @@ if ( post_password_required() ) {
 					'callback' => 'jeweltheme_polmo_comment',
 					'avatar_size' => 70
 				) );
+				paginate_comments_links();
 			?>
 		</ul><!-- .comment-list -->
 
-	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'jeweltheme_memorials' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( wp_kses( __( '&larr; Older Comments', 'jeweltheme_memorials' ) ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( wp_kses( __( 'Newer Comments &rarr;', 'jeweltheme_memorials' ) ) ); ?></div>
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // check for comment navigation ?>
+		<?php the_comments_navigation(); ?>
 
 		<?php
 			// If comments are closed and there are comments, let's leave a little note, shall we?
 			if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 		?>
-			<p class="no-comments"><?php _e( 'Comments are closed.', 'jeweltheme_memorials' ); ?></p>
+			<p class="no-comments"><?php _e( 'Comments are closed.', 'polmo-lite' ); ?></p>
 		<?php endif; ?>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'jeweltheme_memorials' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( wp_kses( __( '&larr; Older Comments', 'jeweltheme_memorials' )) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( wp_kses( __( 'Newer Comments &rarr;', 'jeweltheme_memorials' )) ); ?></div>
-		</nav><!-- #comment-nav-below -->
-		<?php endif; // check for comment navigation ?>
+
 
 	<?php endif; // have_comments() ?>
 
@@ -79,13 +82,13 @@ if ( post_password_required() ) {
 	$comments_args = array(
 		'fields' =>  $fields,
 		'id_form'          			=> 'comment-form',
-		'title_reply'       		=> esc_html__( 'Leave a Comment', 'jeweltheme_memorials' ),
-		'title_reply_to'    		=> esc_html__( 'Leave a Comment to %s', 'jeweltheme_memorials' ),
-		'cancel_reply_link' 		=> esc_html__( 'Cancel Comment', 'jeweltheme_memorials' ),
-		'label_submit'      		=> esc_html__( 'Send Now', 'jeweltheme_memorials' ),
+		'title_reply'       		=> esc_html__( 'Leave a Comment', 'polmo-lite' ),
+		'title_reply_to'    		=> esc_html__( 'Leave a Comment to %s', 'polmo-lite' ),
+		'cancel_reply_link' 		=> esc_html__( 'Cancel Comment', 'polmo-lite' ),
+		'label_submit'      		=> esc_html__( 'Send Now', 'polmo-lite' ),
 		'class_submit'      		=> 'btn btn-default',
 		'comment_notes_before'      => '',
-		//'comment_notes_after' 		=> '<button type="submit" id="submit" value="' . esc_html__( 'Send', 'jeweltheme_memorials' ) . '" class="submit-btn submit md-btn btn"> Send Now <i class="fa fa-angle-double-right"></i></button>',
+		//'comment_notes_after' 		=> '<button type="submit" id="submit" value="' . esc_html__( 'Send', 'polmo-lite' ) . '" class="submit-btn submit md-btn btn"> Send Now <i class="fa fa-angle-double-right"></i></button>',
 		'id_submit'					=> 'submit',
 		'comment_field'             => '<textarea id="comment" class="form-control" name="comment" placeholder="Your message**" cols="40" rows="10" required></textarea>',
 		'label_submit'              => 'Submit'

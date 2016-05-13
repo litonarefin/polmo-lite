@@ -20,15 +20,15 @@ function the_posts_navigation() {
 	}
 	?>
 	<nav class="navigation posts-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'jeweltheme_polmo' ); ?></h2>
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'polmo-lite' ); ?></h2>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( esc_html__( 'Older posts', 'jeweltheme_polmo' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( esc_html__( 'Older posts', 'polmo-lite' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts', 'jeweltheme_polmo' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts', 'polmo-lite' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -53,7 +53,7 @@ function the_post_navigation() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'jeweltheme_polmo' ); ?></h2>
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'polmo-lite' ); ?></h2>
 		<div class="nav-links">
 			<?php
 				previous_post_link( '<div class="nav-previous">%link</div>', '%title' );
@@ -83,12 +83,12 @@ function jeweltheme_polmo_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'jeweltheme_polmo' ),
+		esc_html_x( 'Posted on %s', 'post date', 'polmo-lite' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'jeweltheme_polmo' ),
+		esc_html_x( 'by %s', 'post author', 'polmo-lite' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -106,13 +106,13 @@ function jeweltheme_polmo_entry_footer() {
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 			/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'jeweltheme_polmo' ) );
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'polmo-lite' ) );
 		if ( $tags_list ) {
-			printf( '<li>' . esc_html__( '%1$s', 'jeweltheme_polmo' ) . '</li>', $tags_list ); // WPCS: XSS OK.
+			printf( '<li>' . esc_html__( '%1$s', 'polmo-lite' ) . '</li>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
-	edit_post_link( esc_html__( 'Edit', 'jeweltheme_polmo' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( esc_html__( 'Edit', 'polmo-lite' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
@@ -129,45 +129,45 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  */
 function the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
-		$title = sprintf( esc_html__( 'Category: %s', 'jeweltheme_polmo' ), single_cat_title( '', false ) );
+		$title = sprintf( esc_html__( 'Category: %s', 'polmo-lite' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
-		$title = sprintf( esc_html__( 'Tag: %s', 'jeweltheme_polmo' ), single_tag_title( '', false ) );
+		$title = sprintf( esc_html__( 'Tag: %s', 'polmo-lite' ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {
-		$title = sprintf( esc_html__( 'Author: %s', 'jeweltheme_polmo' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		$title = sprintf( esc_html__( 'Author: %s', 'polmo-lite' ), '<span class="vcard">' . get_the_author() . '</span>' );
 	} elseif ( is_year() ) {
-		$title = sprintf( esc_html__( 'Year: %s', 'jeweltheme_polmo' ), get_the_date( esc_html_x( 'Y', 'yearly archives date format', 'jeweltheme_polmo' ) ) );
+		$title = sprintf( esc_html__( 'Year: %s', 'polmo-lite' ), get_the_date( esc_html_x( 'Y', 'yearly archives date format', 'polmo-lite' ) ) );
 	} elseif ( is_month() ) {
-		$title = sprintf( esc_html__( 'Month: %s', 'jeweltheme_polmo' ), get_the_date( esc_html_x( 'F Y', 'monthly archives date format', 'jeweltheme_polmo' ) ) );
+		$title = sprintf( esc_html__( 'Month: %s', 'polmo-lite' ), get_the_date( esc_html_x( 'F Y', 'monthly archives date format', 'polmo-lite' ) ) );
 	} elseif ( is_day() ) {
-		$title = sprintf( esc_html__( 'Day: %s', 'jeweltheme_polmo' ), get_the_date( esc_html_x( 'F j, Y', 'daily archives date format', 'jeweltheme_polmo' ) ) );
+		$title = sprintf( esc_html__( 'Day: %s', 'polmo-lite' ), get_the_date( esc_html_x( 'F j, Y', 'daily archives date format', 'polmo-lite' ) ) );
 	} elseif ( is_tax( 'post_format' ) ) {
 		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-			$title = esc_html_x( 'Asides', 'post format archive title', 'jeweltheme_polmo' );
+			$title = esc_html_x( 'Asides', 'post format archive title', 'polmo-lite' );
 		} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-			$title = esc_html_x( 'Galleries', 'post format archive title', 'jeweltheme_polmo' );
+			$title = esc_html_x( 'Galleries', 'post format archive title', 'polmo-lite' );
 		} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-			$title = esc_html_x( 'Images', 'post format archive title', 'jeweltheme_polmo' );
+			$title = esc_html_x( 'Images', 'post format archive title', 'polmo-lite' );
 		} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-			$title = esc_html_x( 'Videos', 'post format archive title', 'jeweltheme_polmo' );
+			$title = esc_html_x( 'Videos', 'post format archive title', 'polmo-lite' );
 		} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-			$title = esc_html_x( 'Quotes', 'post format archive title', 'jeweltheme_polmo' );
+			$title = esc_html_x( 'Quotes', 'post format archive title', 'polmo-lite' );
 		} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-			$title = esc_html_x( 'Links', 'post format archive title', 'jeweltheme_polmo' );
+			$title = esc_html_x( 'Links', 'post format archive title', 'polmo-lite' );
 		} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-			$title = esc_html_x( 'Statuses', 'post format archive title', 'jeweltheme_polmo' );
+			$title = esc_html_x( 'Statuses', 'post format archive title', 'polmo-lite' );
 		} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-			$title = esc_html_x( 'Audio', 'post format archive title', 'jeweltheme_polmo' );
+			$title = esc_html_x( 'Audio', 'post format archive title', 'polmo-lite' );
 		} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-			$title = esc_html_x( 'Chats', 'post format archive title', 'jeweltheme_polmo' );
+			$title = esc_html_x( 'Chats', 'post format archive title', 'polmo-lite' );
 		}
 	} elseif ( is_post_type_archive() ) {
-		$title = sprintf( esc_html__( 'Archives: %s', 'jeweltheme_polmo' ), post_type_archive_title( '', false ) );
+		$title = sprintf( esc_html__( 'Archives: %s', 'polmo-lite' ), post_type_archive_title( '', false ) );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-		$title = sprintf( esc_html__( '%1$s: %2$s', 'jeweltheme_polmo' ), $tax->labels->singular_name, single_term_title( '', false ) );
+		$title = sprintf( esc_html__( '%1$s: %2$s', 'polmo-lite' ), $tax->labels->singular_name, single_term_title( '', false ) );
 	} else {
-		$title = esc_html__( 'Archives', 'jeweltheme_polmo' );
+		$title = esc_html__( 'Archives', 'polmo-lite' );
 	}
 
 	/**
@@ -255,32 +255,17 @@ add_action( 'edit_category', 'jeweltheme_polmo_category_transient_flusher' );
 add_action( 'save_post',     'jeweltheme_polmo_category_transient_flusher' );
 
 
-
-
-
-function jeweltheme_polmo_post_meta_social(){ ?>  
-	<div class="share-post pull-right">
-		<ul class="share-list">
-			<li><a href="https://twitter.com/home?status=<?php the_permalink();?>"><i class="fa fa-twitter"></i></a></li>
-			<li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>"><i class="fa fa-facebook"></i></a></li>
-			<li><a href="https://pinterest.com/pin/create/button/?url=&amp;media=&amp;description=<?php the_permalink();?>"><i class="fa fa-pinterest"></i></a></li>
-			<li><a href="https://plus.google.com/share?url=<?php the_permalink();?>"><i class="fa fa-google-plus"></i></a> </li>
-		</ul>
-	</div><!-- /.share-post -->    
-<?php } 
-
-
 function jeweltheme_polmo_post_meta(){ ?>
 	<div class="post-meta">
 		<div class="entry-meta">
 			<div class="author pull-left">
 				<?php echo sprintf(
-					esc_html_x( 'by %s', 'post author', 'jeweltheme_polmo' ),
+					esc_html_x( 'by %s', 'post author', 'polmo-lite' ),
 					'<span class="author-name"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 					);
 					?>
 			</div><!-- /.author -->
-			<div class="comments pull-right">
+			<div class="comments">
 				<span class="comments-icon"><i class="fa fa-comments"></i></span>
 
 				<?php
@@ -288,15 +273,15 @@ function jeweltheme_polmo_post_meta(){ ?>
 
 				if ( comments_open() ) {
 					if ( $num_comments == 0 ) {
-						$comments = __('No Comments', 'jeweltheme_polmo');
+						$comments = __('No Comments', 'polmo-lite');
 					} elseif ( $num_comments > 1 ) {
-						$comments = $num_comments . __(' Comments','jeweltheme_polmo');
+						$comments = $num_comments . __(' Comments','polmo-lite');
 					} else {
-						$comments = __('1 Comment','jeweltheme_polmo');
+						$comments = __('1 Comment','polmo-lite');
 					}
-					echo wp_kses( $write_comments = '<span class="count">'. $comments .'</span>', 'jeweltheme_polmo' ) ;
+					echo wp_kses( $write_comments = '<span class="count">'. $comments .'</span>', 'polmo-lite' ) ;
 				} else {
-					echo esc_html( $write_comments =  __('Comments off','jeweltheme_polmo') );
+					echo esc_html( $write_comments =  __('Comments off','polmo-lite') );
 				}
 
 				?>
@@ -304,13 +289,6 @@ function jeweltheme_polmo_post_meta(){ ?>
 		</div><!-- /.entry-meta -->
 	</div><!-- /.post-meta -->
 <?php }
-			
-
-
-function jeweltheme_meta($meta){
-    $meta = get_post_meta(get_the_ID(), $meta, true);
-    return $meta;
-}
 
 
 function jeweltheme_get_avatar_url($get_avatar){
@@ -326,7 +304,7 @@ function jeweltheme_author_bio(){ ?>
         </div><!-- /.author-avatar -->
         <div class="author-details media-body">
             <div class="details-top">
-                <?php echo esc_attr('by','jeweltheme_polmo');?> <span class="author-name"><?php echo get_the_author_meta('display_name');?></span>
+                <?php echo esc_attr('by','polmo-lite');?> <span class="author-name"><?php echo get_the_author_meta('display_name');?></span>
             </div><!-- /.details-top -->
             <p class="about-author">
                 <?php echo get_the_author_meta('description');?>
@@ -346,7 +324,7 @@ add_filter('comment_reply_link', 'jeweltheme_comment_reply_link_filter', 99);
 
 
 /*===================================================================================
- * Jewel Theme Polmo Comments
+ * Polmo Comments
  * =================================================================================*/
 
 if(!function_exists('jeweltheme_polmo_comment')){
@@ -360,7 +338,7 @@ if(!function_exists('jeweltheme_polmo_comment')){
     ?>
     <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 
-        <p>Pingback: <?php comment_author_link(); ?> <?php edit_comment_link( wp_kses( '(Edit)', 'jeweltheme_polmo' ), '<span class="edit-link">', '</span>' ); ?></p>
+        <p>Pingback: <?php comment_author_link(); ?> <?php edit_comment_link( wp_kses( '(Edit)', 'polmo-lite' ), '<span class="edit-link">', '</span>' ); ?></p>
         <?php
         break;
         default :
@@ -380,7 +358,7 @@ if(!function_exists('jeweltheme_polmo_comment')){
             				<?php printf( '<span class="name">%1$s</span>', get_comment_author_link()); ?>
             			</span>
             			<span class="comment-reply pull-right">
-            				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => wp_kses( 'Reply', 'jeweltheme_memorials' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+            				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => wp_kses( 'Reply', 'polmo-lite' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
             			</span> 
             		</div><!-- /.comment-meta -->
 
@@ -388,7 +366,7 @@ if(!function_exists('jeweltheme_polmo_comment')){
             			<?php echo get_comment_text(); ?>
             		</p>
             		<div class="comment-time">
-            			<time datetime="<?php the_time( 'c' ); ?>"> <?php the_time('d  M, Y'); ?> <?php echo _e("at", "jeweltheme_polmo");?> <?php echo get_comment_time()?></time> 
+            			<time datetime="<?php the_time( 'c' ); ?>"> <?php the_time('d  M, Y'); ?> <?php echo _e("at", "polmo-lite");?> <?php echo get_comment_time()?></time> 
             		</div>
             	</div><!-- /.comment-content -->
                 
@@ -400,3 +378,75 @@ if(!function_exists('jeweltheme_polmo_comment')){
         }
 
 } 
+
+if ( ! function_exists( 'jeweltheme_polmo_slider_scripts' ) ) {
+	function jeweltheme_polmo_slider_scripts(){
+		if (is_page() && basename(get_page_template()) == "front-page.php") { ?>
+			<script>
+				/*
+				!function(e){"use strict";e(".bxslider").bxSlider({auto:!0,preloadImages:"all",mode:"horizontal",captions:!1,controls:!0,pause:4e3,speed:1200,onSliderLoad:function(){e(".bxslider>li .slide-inner").eq(1).addClass("active-slide"),e(".slide-inner.active-slide .slider-title").addClass("wow animated bounceInDown"),e(".slide-inner.active-slide .slide-description").addClass("wow animated bounceInRight"),e(".slide-inner.active-slide .btn").addClass("wow animated zoomInUp")},onSlideAfter:function(i,n,t){console.log(t),e(".active-slide").removeClass("active-slide"),e(".bxslider>li .slide-inner").eq(t+1).addClass("active-slide"),e(".slide-inner.active-slide").addClass("wow animated bounceInRight")},onSlideBefore:function(){e(".slide-inner.active-slide").removeClass("wow animated bounceInRight"),e(".one.slide-inner.active-slide").removeAttr("style")}}),e(document).ready(function(){function i(){return"ontouchstart"in document.documentElement}function n(){if("undefined"!=typeof google){var n={center:[-37.817331,144.955652],zoom:15,mapTypeControl:!0,mapTypeControlOptions:{style:google.maps.MapTypeControlStyle.DROPDOWN_MENU},navigationControl:!0,scrollwheel:!1,streetViewControl:!0};i()&&(n.draggable=!1),e("#googleMaps").gmap3({map:{options:n},marker:{latLng:[23.709921,90.407143],options:{icon:"images/mapicon.png"}}})}}e("#masthead #main-menu").onePageNav(),n()}),e("#contactform").on("submit",function(i){i.preventDefault(),$this=e(this),e.ajax({type:"POST",url:$this.attr("action"),data:$this.serialize(),success:function(){alert("Message Sent Successfully")}})})}(jQuery);
+				*/
+
+				! function(e) {
+					"use strict";
+					e(".bxslider").bxSlider({
+						auto: !0,
+						preloadImages: "all",
+						mode: "horizontal",
+						captions: !1,
+						controls: !0,
+						pause: 4e3,
+						speed: 1200,
+						onSliderLoad: function() {
+							e(".bxslider>li .slide-inner").eq(1).addClass("active-slide"), e(".slide-inner.active-slide .slider-title").addClass("wow animated bounceInDown"), e(".slide-inner.active-slide .slide-description").addClass("wow animated bounceInRight"), e(".slide-inner.active-slide .btn").addClass("wow animated zoomInUp")
+						},
+						onSlideAfter: function(i, n, t) {
+							console.log(t), e(".active-slide").removeClass("active-slide"), e(".bxslider>li .slide-inner").eq(t + 1).addClass("active-slide"), e(".slide-inner.active-slide").addClass("wow animated bounceInRight")
+						},
+						onSlideBefore: function() {
+							e(".slide-inner.active-slide").removeClass("wow animated bounceInRight"), e(".one.slide-inner.active-slide").removeAttr("style")
+						}
+					}), e(document).ready(function() {
+						function i() {
+							return "ontouchstart" in document.documentElement
+						}
+
+
+						e("#masthead #main-menu").onePageNav(), n()
+					}), e("#contactform").on("submit", function(i) {
+						i.preventDefault(), $this = e(this), e.ajax({
+							type: "POST",
+							url: $this.attr("action"),
+							data: $this.serialize(),
+							success: function() {
+								alert("Message Sent Successfully")
+							}
+						})
+					})
+				}(jQuery);
+
+		  </script>
+		<?php }
+	}
+}
+
+// Slider Footer Scripts
+add_action('wp_footer','jeweltheme_polmo_slider_scripts',100);
+
+
+
+
+
+if ( ! function_exists( 'jeweltheme_polmo_the_custom_logo' ) ) :
+/**
+ * Displays the optional custom logo.
+ *
+ * Does nothing if the custom logo is not available.
+ *
+ */
+function jeweltheme_polmo_the_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+}
+endif;

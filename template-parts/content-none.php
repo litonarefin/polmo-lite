@@ -10,7 +10,7 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="section-title"><?php esc_html_e('Sorry! Nothing Found!','jeweltheme_memorials');?></header><!-- /.section-title -->
+	<header class="section-title"><?php esc_html_e('Sorry! Nothing Found!','polmo-lite');?></header><!-- /.section-title -->
 	<div class="no-search">
 		<?php get_search_form(); ?>	
 	</div>	

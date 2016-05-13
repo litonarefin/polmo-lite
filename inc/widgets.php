@@ -2,8 +2,8 @@
     /**
     * Polmo Lite Popular Widget    
     * @package Polmo Lite WP
-    * @author Jewel Theme http://jeweltheme.com
-    * @copyright Copyright (c) 2013 - 2014 Jewel Theme
+    * @author Liton Arefin 
+    * @copyright Copyright (c) 2015 - 2016 Liton Arefin
     * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or Later
     */
     class JewelTheme_Polmo_Popular_Posts_Widget extends WP_Widget {
@@ -13,9 +13,9 @@
         */
         public function __construct() {
             parent::__construct(
-                'jwtheme_topclass_popular_posts', // Base ID
+                'jeweltheme_polmo_popular_posts', // Base ID
                 'Polmo Lite Popular Posts', // Name
-                array( 'description' => __( 'Popular Posts Display Widget', 'jeweltheme_polmo' ), ) // Args
+                array( 'description' => __( 'Popular Posts Display Widget', 'polmo-lite' ), ) // Args
             );
         }
 
@@ -46,7 +46,7 @@
         public function widget( $args, $instance ) {
             extract( $args );
 
-            $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Popular Posts', 'jeweltheme_polmo' ) : $instance['title'], $instance, $this->id_base);
+            $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Popular Posts', 'polmo-lite' ) : $instance['title'], $instance, $this->id_base);
 
             $avatar_size = empty($instance['avatar_size']) ? 48 : $instance['avatar_size'];
             $word_limit = empty($instance['word_limit']) ? 20 : $instance['word_limit'];
@@ -84,7 +84,7 @@
                           </div><!-- /.entry-date -->
                           <div class="comments">
                             <span class="comments-icon"><i class="fa fa-comments"></i></span>
-                            <span class="count"><?php echo get_comments_number(); ?></span> <?php echo esc_html_e("comments","jeweltheme_polmo");?>
+                            <span class="count"><?php echo get_comments_number(); ?></span> <?php echo esc_htmlesc_html__("comments","polmo-lite");?>
                           </div><!-- /.comments -->
                         </div><!-- /.post-meta -->
                       </div><!-- /.post-content -->
@@ -139,16 +139,16 @@
             $count = isset($instance['count']) ? esc_attr($instance['count']) : '5';
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'jeweltheme_polmo' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html__( 'Title:', 'polmo-lite' ); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Post Count:', 'jeweltheme_polmo' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php esc_html__( 'Post Count:', 'polmo-lite' ); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo esc_attr( $count ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'avatar_size' ); ?>"><?php _e( 'Avatar Size:', 'jeweltheme_polmo' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'avatar_size' ); ?>"><?php esc_html__( 'Avatar Size:', 'polmo-lite' ); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id( 'avatar_size' ); ?>" name="<?php echo $this->get_field_name( 'avatar_size' ); ?>" type="text" value="<?php echo esc_attr( $avatar_size ); ?>" />
         </p>
         <?php
@@ -165,8 +165,8 @@ add_action( 'widgets_init', create_function( '', 'register_widget( "JewelTheme_P
     /**
     * Polmo Lite Popular Widget    
     * @package Polmo Lite
-    * @author Jewel Theme http://jeweltheme.com
-    * @copyright Copyright (c) 2013 - 2014 Jewel Theme
+    * @author Liton Arefin 
+    * @copyright Copyright (c) 2015 - 2016 Liton Arefin
     * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or Later
     */
     class JewelTheme_Polmo_Recent_Posts_Widget extends WP_Widget {
@@ -178,7 +178,7 @@ add_action( 'widgets_init', create_function( '', 'register_widget( "JewelTheme_P
             parent::__construct(
                 'jeweltheme_polmo_recent_posts', // Base ID
                 'Polmo Lite Recent Posts', // Name
-                array( 'description' => __( 'Recent Posts Display Widget', 'jeweltheme_polmo' ), ) // Args
+                array( 'description' => __( 'Recent Posts Display Widget', 'polmo-lite' ), ) // Args
             );
         }
 
@@ -209,7 +209,7 @@ add_action( 'widgets_init', create_function( '', 'register_widget( "JewelTheme_P
         public function widget( $args, $instance ) {
             extract( $args );
 
-            $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Recent Posts', 'jeweltheme_polmo' ) : $instance['title'], $instance, $this->id_base);
+            $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Recent Posts', 'polmo-lite' ) : $instance['title'], $instance, $this->id_base);
 
             $avatar_size = empty($instance['avatar_size']) ? 70 : $instance['avatar_size'];
             $word_limit = empty($instance['word_limit']) ? 20 : $instance['word_limit'];
@@ -246,7 +246,7 @@ add_action( 'widgets_init', create_function( '', 'register_widget( "JewelTheme_P
                           </div><!-- /.entry-date -->
                           <div class="comments">
                             <span class="comments-icon"><i class="fa fa-comments"></i></span>
-                            <span class="count"><?php echo get_comments_number(); ?></span> <?php echo esc_html_e("comments","jeweltheme_polmo");?>
+                            <span class="count"><?php echo get_comments_number(); ?></span> <?php echo esc_htmlesc_html__("comments","polmo-lite");?>
                           </div><!-- /.comments -->
                         </div><!-- /.post-meta -->
                       </div><!-- /.post-content -->
@@ -302,16 +302,16 @@ add_action( 'widgets_init', create_function( '', 'register_widget( "JewelTheme_P
             $count = isset($instance['count']) ? esc_attr($instance['count']) : '2';
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'jeweltheme_polmo' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html__( 'Title:', 'polmo-lite' ); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Post Count:', 'jeweltheme_polmo' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php esc_html__( 'Post Count:', 'polmo-lite' ); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo esc_attr( $count ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'avatar_size' ); ?>"><?php _e( 'Avatar Size:', 'jeweltheme_polmo' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'avatar_size' ); ?>"><?php esc_html__( 'Avatar Size:', 'polmo-lite' ); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id( 'avatar_size' ); ?>" name="<?php echo $this->get_field_name( 'avatar_size' ); ?>" type="text" value="<?php echo esc_attr( $avatar_size ); ?>" />
         </p>
         <?php
@@ -328,8 +328,8 @@ add_action( 'widgets_init', create_function( '', 'register_widget( "JewelTheme_P
 /**
 * Polmo Lite Socials    
 * @package Polmo Lite
-* @author Jewel Theme http://jeweltheme.com
-* @copyright Copyright (c) 2013 - 2014 Jewel Theme
+* @author Liton Arefin 
+* @copyright Copyright (c) 2015 - 2016 Liton Arefin
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or Later
 */
 class JewelTheme_Polmo_Socials_Follow_Us extends WP_Widget {
@@ -341,7 +341,7 @@ class JewelTheme_Polmo_Socials_Follow_Us extends WP_Widget {
         parent::__construct(
             'jeweltheme_polmo_social_share', // Base ID
             'Polmo Lite Follow Us', // Name
-            array( 'description' => __( 'Polmo Follow Us Socials', 'jeweltheme_polmo' ), ) // Args
+            array( 'description' => __( 'Polmo Follow Us Socials', 'polmo-lite' ), ) // Args
         );
     }
 
@@ -356,7 +356,7 @@ class JewelTheme_Polmo_Socials_Follow_Us extends WP_Widget {
     public function widget( $args, $instance ) {
         extract( $args );
 
-        $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Follow Us', 'jeweltheme_polmo' ) : $instance['title'], $instance, $this->id_base);
+        $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Follow Us', 'polmo-lite' ) : $instance['title'], $instance, $this->id_base);
 
         $facebook = empty($instance['facebook']) ? '' : $instance['facebook'];
         $twitter = empty($instance['twitter']) ? '' : $instance['twitter'];
@@ -440,31 +440,31 @@ class JewelTheme_Polmo_Socials_Follow_Us extends WP_Widget {
 
     ?>
     <p>
-        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'jeweltheme_polmo' ); ?></label> 
+        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html__( 'Title:', 'polmo-lite' ); ?></label> 
         <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e( 'Facebook:', 'jeweltheme_polmo' ); ?></label> 
+        <label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php esc_html__( 'Facebook:', 'polmo-lite' ); ?></label> 
         <input class="widefat" id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" type="text" value="<?php echo esc_attr( $facebook ); ?>" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php _e( 'Twitter:', 'jeweltheme_polmo' ); ?></label> 
+        <label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php esc_html__( 'Twitter:', 'polmo-lite' ); ?></label> 
         <input class="widefat" id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" type="text" value="<?php echo esc_attr( $twitter ); ?>" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id( 'google_plus' ); ?>"><?php _e( 'Google Plus:', 'jeweltheme_polmo' ); ?></label> 
+        <label for="<?php echo $this->get_field_id( 'google_plus' ); ?>"><?php esc_html__( 'Google Plus:', 'polmo-lite' ); ?></label> 
         <input class="widefat" id="<?php echo $this->get_field_id( 'google_plus' ); ?>" name="<?php echo $this->get_field_name( 'google_plus' ); ?>" type="text" value="<?php echo esc_attr( $google_plus ); ?>" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id( 'pinterest' ); ?>"><?php _e( 'Pinterest:', 'jeweltheme_polmo' ); ?></label> 
+        <label for="<?php echo $this->get_field_id( 'pinterest' ); ?>"><?php esc_html__( 'Pinterest:', 'polmo-lite' ); ?></label> 
         <input class="widefat" id="<?php echo $this->get_field_id( 'pinterest' ); ?>" name="<?php echo $this->get_field_name( 'pinterest' ); ?>" type="text" value="<?php echo esc_attr( $pinterest ); ?>" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id( 'linkedin' ); ?>"><?php _e( 'Linked In:', 'jeweltheme_polmo' ); ?></label> 
+        <label for="<?php echo $this->get_field_id( 'linkedin' ); ?>"><?php esc_html__( 'Linked In:', 'polmo-lite' ); ?></label> 
         <input class="widefat" id="<?php echo $this->get_field_id( 'linkedin' ); ?>" name="<?php echo $this->get_field_name( 'linkedin' ); ?>" type="text" value="<?php echo esc_attr( $linkedin ); ?>" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id( 'youtube' ); ?>"><?php _e( 'Youtube:', 'jeweltheme_polmo' ); ?></label> 
+        <label for="<?php echo $this->get_field_id( 'youtube' ); ?>"><?php esc_html__( 'Youtube:', 'polmo-lite' ); ?></label> 
         <input class="widefat" id="<?php echo $this->get_field_id( 'youtube' ); ?>" name="<?php echo $this->get_field_name( 'youtube' ); ?>" type="text" value="<?php echo esc_attr( $youtube ); ?>" />
     </p>
 

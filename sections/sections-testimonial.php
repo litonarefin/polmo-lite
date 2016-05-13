@@ -1,7 +1,7 @@
 <?php 
-$jeweltheme_polmo_testimonial_heading = get_theme_mod('jeweltheme_polmo_testimonial_heading',__('Our Testimonials','jeweltheme_polmo'));
+$jeweltheme_polmo_testimonial_heading = get_theme_mod('jeweltheme_polmo_testimonial_heading',__('Our Testimonials','polmo-lite'));
 $jeweltheme_polmo_testimonial_heading_category = get_theme_mod('jeweltheme_polmo_testimonial_heading_category');
-$jeweltheme_polmo_testimonial_posts = get_theme_mod('jeweltheme_polmo_testimonial_posts',__('3','jeweltheme_polmo'));
+$jeweltheme_polmo_testimonial_posts = get_theme_mod('jeweltheme_polmo_testimonial_posts',__('3','polmo-lite'));
 $testimonials = jeweltheme_polmo_get_custom_posts( $jeweltheme_polmo_testimonial_heading_category, $jeweltheme_polmo_testimonial_posts );
 ?>
 

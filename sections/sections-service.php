@@ -1,32 +1,11 @@
-<?php
-
-$jeweltheme_polmo_service_heading_title = get_theme_mod('jeweltheme_polmo_service_heading_title',__('<span>Polmo</span> Core Services','jeweltheme_polmo'));
-$jeweltheme_polmo_service_desc = get_theme_mod('jeweltheme_polmo_service_desc',__('Matter is made up of atoms having dimensions approximately determined to be in the neighbourhood of the one fifty-millionth of an inch in diameter.','jeweltheme_polmo'));
-
-//Service 1
-$jeweltheme_polmo_service_icon_1 = get_theme_mod('jeweltheme_polmo_service_icon_1',__('fa-android','jeweltheme_polmo'));
-$jeweltheme_polmo_service_title_1 = get_theme_mod('jeweltheme_polmo_service_title_1',__('Android Apps Developement','jeweltheme_polmo'));
-$jeweltheme_polmo_service_desc_1 = get_theme_mod('jeweltheme_polmo_service_desc_1',__('Atoms dimensions approximately determined with one fifty-millionth an inch in diameter.','jeweltheme_polmo'));
+<?php 
+    $jeweltheme_polmo_service_heading_title = get_theme_mod('jeweltheme_polmo_service_heading_title',__('<span>Polmo</span> Core Services','polmo-lite'));
+    $jeweltheme_polmo_service_desc = get_theme_mod('jeweltheme_polmo_service_desc',__('Matter is made up of atoms having dimensions approximately determined to be in the neighbourhood of the one fifty-millionth of an inch in diameter.','polmo-lite'));
 
 
-//Service 2
-$jeweltheme_polmo_service_icon_2 = get_theme_mod('jeweltheme_polmo_service_icon_2',__('fa-html5','jeweltheme_polmo'));
-$jeweltheme_polmo_service_title_2 = get_theme_mod('jeweltheme_polmo_service_title_2',__('HTML5 Modern Technology','jeweltheme_polmo'));
-$jeweltheme_polmo_service_desc_2 = get_theme_mod('jeweltheme_polmo_service_desc_2',__('Continuity as distinguished from may be considering what would be visible by magnification.','jeweltheme_polmo'));
-
-
-//Service 3
-$jeweltheme_polmo_service_icon_3 = get_theme_mod('jeweltheme_polmo_service_icon_3',__('fa-maxcdn','jeweltheme_polmo'));
-$jeweltheme_polmo_service_title_3 = get_theme_mod('jeweltheme_polmo_service_title_3',__('Latest Max CDN Service','jeweltheme_polmo'));
-$jeweltheme_polmo_service_desc_3 = get_theme_mod('jeweltheme_polmo_service_desc_3',__('Definite amount of matter in visible universe, a number of molecules and atoms in huge number.','jeweltheme_polmo'));
-
-
-//Service 4
-$jeweltheme_polmo_service_icon_4 = get_theme_mod('jeweltheme_polmo_service_icon_4',__('fa-umbrella','jeweltheme_polmo'));
-$jeweltheme_polmo_service_title_4 = get_theme_mod('jeweltheme_polmo_service_title_4',__('Latest Umbrella Server','jeweltheme_polmo'));
-$jeweltheme_polmo_service_desc_4 = get_theme_mod('jeweltheme_polmo_service_desc_4',__('Phenomena of light and waves of all lengths are found in velocity of 186,000 miles in a second.','jeweltheme_polmo'));
-
-?>
+    $hide_services = get_theme_mod('hide_services', '1');
+    
+    if( $hide_services == ''){ ?>
 
   <!-- Service Section-->
 
@@ -37,10 +16,10 @@ $jeweltheme_polmo_service_desc_4 = get_theme_mod('jeweltheme_polmo_service_desc_
           <div class="section-top wow animated fadeInUp" data-wow-delay=".5s">
             <?php if ( !empty($jeweltheme_polmo_service_heading_title) && !empty($jeweltheme_polmo_service_desc) ){ ?>
               <h2 class="section-title">
-                <?php echo $jeweltheme_polmo_service_heading_title; ?>
+                <?php echo  $jeweltheme_polmo_service_heading_title; ?>
               </h2>
               <p class="section-description">
-                <?php echo $jeweltheme_polmo_service_desc; ?>
+                <?php echo  $jeweltheme_polmo_service_desc; ?>
               </p><!-- /.section-description -->
             <?php } ?>
 
@@ -48,69 +27,62 @@ $jeweltheme_polmo_service_desc_4 = get_theme_mod('jeweltheme_polmo_service_desc_
 
           <div class="section-details">
             <div class="service-details">
-              <div class="col-md-3 col-sm-6">
-                <div class="item wow animated fadeInLeft" data-wow-delay=".5s">
-                  <?php if ( !empty($jeweltheme_polmo_service_icon_1) && !empty($jeweltheme_polmo_service_title_1) && !empty($jeweltheme_polmo_service_desc_1) ){ ?>
-                    <div class="item-icon">
-                      <i class="fa <?php echo $jeweltheme_polmo_service_icon_1; ?>"></i>
-                    </div><!-- /.item-icon -->
-                    <div class="item-details">
-                      <h4 class="item-title"><?php echo $jeweltheme_polmo_service_title_1; ?></h4><!-- /.item-title -->
-                      <p class="item-description">
-                        <?php echo $jeweltheme_polmo_service_desc_1; ?>
-                      </p><!-- /.item-description -->
-                    </div><!-- /.item-details -->
-                   <?php } ?> 
-                </div><!-- /.item -->
-              </div>
 
-              <div class="col-md-3 col-sm-6">
-                <div class="item wow animated fadeInLeft" data-wow-delay=".35s">
-                  <?php if ( !empty($jeweltheme_polmo_service_icon_2) && !empty($jeweltheme_polmo_service_title_2) && !empty($jeweltheme_polmo_service_desc_2) ){ ?>
-                    <div class="item-icon">
-                      <i class="fa <?php echo $jeweltheme_polmo_service_icon_2; ?>"></i>
-                    </div><!-- /.item-icon -->
-                    <div class="item-details">
-                      <h4 class="item-title"><?php echo $jeweltheme_polmo_service_title_2; ?></h4><!-- /.item-title -->
-                      <p class="item-description">
-                        <?php echo $jeweltheme_polmo_service_desc_2; ?>
-                      </p><!-- /.item-description -->
-                    </div><!-- /.item-details -->
-                  <?php } ?>
-                </div><!-- /.item -->
-              </div>
+              <?php for($is=1; $is<5; $is++) { 
+                if( get_theme_mod('page-column'.$is,false) ) {
+                  $queryvar = new wp_query('page_id='.get_theme_mod('page-column'.$is,true));       
+                  while( $queryvar->have_posts() ) : $queryvar->the_post(); ?> 
 
-              <div class="col-md-3 col-sm-6">
-                <div class="item wow animated fadeInRight" data-wow-delay=".35s">
-                  <?php if ( !empty($jeweltheme_polmo_service_icon_3) && !empty($jeweltheme_polmo_service_title_3) && !empty($jeweltheme_polmo_service_desc_3) ){ ?>
-                    <div class="item-icon">
-                      <i class="fa <?php echo $jeweltheme_polmo_service_icon_3; ?>"></i>
-                    </div><!-- /.item-icon -->
-                    <div class="item-details">
-                      <h4 class="item-title"><?php echo $jeweltheme_polmo_service_title_3; ?></h4><!-- /.item-title -->
-                      <p class="item-description">
-                        <?php echo $jeweltheme_polmo_service_desc_3; ?>
-                      </p><!-- /.item-description -->
-                    </div><!-- /.item-details -->
-                  <?php } ?>
-                </div><!-- /.item -->
-              </div>
+                    <div class="col-md-3 col-sm-6">
+                      <div class="item wow animated fadeInRight" data-wow-delay=".35s">
+                          <div class="item-icon">
+                            <?php if ( has_post_thumbnail() ) {
+                              the_post_thumbnail( array(65,65,true));
+                              } else { ?>
+                                <img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/img_404.png" width="65" alt=""/>
+                            <?php } ?>
+                          </div><!-- /.item-icon -->
+                          <div class="item-details">
+                            <h4 class="item-title"><?php the_title(); ?></h4><!-- /.item-title -->
+                            <p class="item-description">
+                              <?php the_excerpt(); ?>
+                            </p><!-- /.item-description -->
+                          </div><!-- /.item-details -->
+                      </div><!-- /.item -->
+                    </div>
 
-              <div class="col-md-3 col-sm-6">
-                <div class="item wow animated fadeInRight" data-wow-delay=".5s">
-                  <?php if ( !empty($jeweltheme_polmo_service_icon_4) && !empty($jeweltheme_polmo_service_title_4) && !empty($jeweltheme_polmo_service_desc_4) ){ ?>
-                    <div class="item-icon">
-                      <i class="fa <?php echo $jeweltheme_polmo_service_icon_4; ?>"></i>
-                    </div><!-- /.item-icon -->
-                    <div class="item-details">
-                      <h4 class="item-title"><?php echo $jeweltheme_polmo_service_title_4; ?></h4><!-- /.item-title -->
-                      <p class="item-description">
-                        <?php echo $jeweltheme_polmo_service_desc_4; ?>
-                      </p><!-- /.item-description -->
-                    </div><!-- /.item-details -->
-                  <?php } ?>
-                </div><!-- /.item -->
-              </div>
+
+              <?php endwhile;
+              wp_reset_postdata();
+              ?>
+              <?php } else { 
+
+
+                    $icons = array( "", "fa-android", "fa-html5", "fa-maxcdn", "fa-umbrella");
+                    $title = array( "", "Android Apps Developement", "HTML5 Modern Technology", "Latest Max CDN Service", "Latest Umbrella Server" );
+                    $desc  = array( "", 
+                                    "Atoms dimensions approximately determined with one fifty-millionth an inch in diameter.",
+                                    "Continuity as distinguished from may be considering what would be visible by magnification.",
+                                    "Definite amount of matter in visible universe, a number of molecules and atoms in huge number.",
+                                    "Phenomena of light and waves of all lengths are found in velocity of 186,000 miles in a second."
+                                    );
+                ?>
+              
+                <div class="col-md-3 col-sm-6">
+                  <div class="item wow animated fadeInLeft" data-wow-delay=".5s">
+                      <div class="item-icon">
+                        <i class="fa <?php  echo $icons[$is]; ?>"></i>
+                      </div><!-- /.item-icon -->
+                      <div class="item-details">
+                        <h4 class="item-title"><?php  echo $title[$is]; ?></h4><!-- /.item-title -->
+                        <p class="item-description"><?php  echo $desc[$is]; ?></p><!-- /.item-description -->
+                      </div><!-- /.item-details -->
+                  </div><!-- /.item -->
+                </div>
+             <?php 
+            }
+           } // End for loop ?>
+
 
             </div><!-- /.service-details -->
           </div><!-- /.section-details -->
@@ -120,3 +92,6 @@ $jeweltheme_polmo_service_desc_4 = get_theme_mod('jeweltheme_polmo_service_desc_
   </section><!-- /#services -->
 
   <!-- Service Section-->
+
+
+  <?php } ?>

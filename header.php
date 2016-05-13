@@ -29,23 +29,18 @@
 					<i class="fa fa-bars"></i>
 				</button>
 
-				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<?php jeweltheme_polmo_the_custom_logo(); ?>
 
-					<?php
-					$jeweltheme_polmo_logo = get_theme_mod('jeweltheme_polmo_logo');
-					if(isset($jeweltheme_polmo_logo) && $jeweltheme_polmo_logo != ""){ ?>										
-						<img src="<?php echo esc_url( $jeweltheme_polmo_logo );?>" alt="<?php echo get_bloginfo('title');?>">				
-					<?php } else{ 
-					
-							if( file_exists(get_stylesheet_directory()."/images/logo.png")){
-								echo '<img src="'.get_stylesheet_directory_uri().'/images/logo.png" alt="'.get_bloginfo('title').'">';				
-							} else{
-								echo '<img src="'.get_stylesheet_directory_uri().'/images/logo.png" alt="'.get_bloginfo('title').'">';
-							}
-						}
+					<?php if ( is_front_page() && is_home() ) : ?>
+						<h1 class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<h1 class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php endif; 
+					$description = get_bloginfo( 'description', 'display' );
+					if ( $description || is_customize_preview() ) : ?>
+						<p class="site-description"><?php echo $description; ?></p>
+					<?php endif;
 					?>
-
-				</a>					
 			</div>
 
 
@@ -72,43 +67,24 @@
 	</header><!-- /#masthead -->
 
 <?php
-$jeweltheme_polmo_general_blog_title = get_theme_mod('jeweltheme_polmo_general_blog_title',__('Welcome To <span>Polmo</span> Blog','jeweltheme_polmo'));
-$jeweltheme_polmo_general_blog_desc = get_theme_mod('jeweltheme_polmo_general_blog_desc',__('Our Creative Blog Will keep you always Updated','jeweltheme_polmo'));
+$jeweltheme_polmo_general_blog_title = get_theme_mod('jeweltheme_polmo_general_blog_title','');
+$jeweltheme_polmo_general_blog_desc = get_theme_mod('jeweltheme_polmo_general_blog_desc', '');
 
 ?>
-
 	<section id="page-head" class="page-head text-center" data-stellar-background-ratio="0.1" data-stellar-vertical-offset="0">
 		<div class="head-overlay">
 			<div class="section-padding">
 				<div class="container">
 					<h1 class="page-title">
-						<?php echo $jeweltheme_polmo_general_blog_title; ?>
+						<?php echo  wp_kses_post($jeweltheme_polmo_general_blog_title); ?>
 					</h1><!-- /.page-title -->
 					<p class="page-description">
-						<?php echo $jeweltheme_polmo_general_blog_desc; ?>
+						<?php echo esc_attr($jeweltheme_polmo_general_blog_desc ); ?>
 					</p><!-- /.page-description -->
 				</div><!-- /.container -->
 			</div><!-- /.section-padding -->
 		</div><!-- /.head-overlay -->
 	</section><!-- /#page-head -->
-
-
-
-	<!-- BreadCrunb Section -->
-
-	<section id="page-status" class="page-status">
-		<div class="container">
-			<ol class="breadcrumb">
-				<li><a href="#">All</a></li>
-				<li><a href="#">Blog post</a></li>
-				<li class="active">Comments</li>
-				<li><a href="#">More posts</a></li>
-			</ol><!-- /.breadcrumb -->
-		</div><!-- /.container -->
-	</section><!-- /#page-status -->
-
-	<!-- BreadCrunb Section -->
-
 
 	<section id="main-content" class="main-content">
 		<div class="container">

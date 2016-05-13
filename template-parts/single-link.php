@@ -17,35 +17,26 @@
         <div class="media-body">
             <?php the_title( sprintf( '<h2 class="entry-title">', esc_url( get_permalink() ) ), '</h2>' ); ?>
 
-            <?php echo jeweltheme_polmo_post_meta_social();?>
-
             <?php echo jeweltheme_polmo_post_meta();?>
 
         </div>
     </div><!-- /.post-head -->
 
     <div class="post-content">
-        <?php $link_text = jeweltheme_meta( '_jeweltheme_polmo_link_text' );
-        if( $link_text ) { ?>
-            <div class="attachmentlink">
-                <?php echo  $link_text; ?>
-                <a class="attach-link" href="<?php echo jeweltheme_meta( '_jeweltheme_polmo_link' ); ?>" > - <?php echo jeweltheme_meta( '_jeweltheme_polmo_link' ); ?></a>
-            </div><!-- /.link-content -->
-        <?php } ?>
 
         <div class="entry-content">
             <?php the_content(); ?>
             
             <?php
                 wp_link_pages( array(
-                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'jeweltheme_memorials' ),
+                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'polmo-lite' ),
                     'after'  => '</div>',
                 ) );
             ?>
         </div><!-- .entry-content -->
         
         <?php 
-        $tags_list = get_the_tag_list( '', esc_html__( ', ', 'jeweltheme_polmo' ) );
+        $tags_list = get_the_tag_list( '', esc_html__( ', ', 'polmo-lite' ) );
         if( $tags_list ){ ?>
             <div class="post-tag">
                 <ul class="tag-list">

@@ -18,53 +18,6 @@
 
 <footer id="colophon" class="footer site-footer" role="contentinfo">
 
-	<div class="footer-social text-center">
-		<div class="social-contact">
-			<div class="col-xs-4">
-				<div class="social-item wow animated fadeInRight" data-wow-delay=".75s">
-					<div class="section-padding">
-						<div class="social-icon">
-							<i class="fa fa-facebook"></i>
-						</div><!-- /.social-icon -->
-						<div class="countdown">
-							<span class="count-number counter">1,203</span>
-						</div><!-- /.coundown -->
-						<span class="about-item">likes</span>
-					</div><!-- /.section-padding -->
-				</div><!-- /.social-item -->
-			</div>
-
-			<div class="col-xs-4">
-				<div class="social-item wow animated fadeInRight" data-wow-delay=".55s">
-					<div class="section-padding">
-						<div class="social-icon">
-							<i class="fa fa-twitter"></i>
-						</div><!-- /.social-icon -->
-						<div class="countdown">
-							<span class="count-number counter">2,305</span>
-						</div><!-- /.coundown -->
-						<span class="about-item">followers</span>
-					</div><!-- /.section-padding -->
-				</div><!-- /.social-item -->
-			</div>
-
-			<div class="col-xs-4">
-				<div class="social-item wow animated fadeInRight" data-wow-delay=".35s">
-					<div class="section-padding">
-						<div class="social-icon">
-							<i class="fa fa-dribbble"></i>
-						</div><!-- /.social-icon -->
-						<div class="countdown">
-							<span class="count-number counter">1,101</span>
-						</div><!-- /.coundown -->
-						<span class="about-item">fans</span>
-					</div><!-- /.section-padding -->
-				</div><!-- /.social-item -->
-			</div>
-		</div><!-- /.social-contact -->
-	</div><!-- /.footer-social -->
-
-
 	<div class="footer-top">
 		<div class="section-padding">
 			<div class="container">

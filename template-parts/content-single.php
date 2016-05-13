@@ -17,8 +17,6 @@
         <div class="media-body">
             <?php the_title( sprintf( '<h1 class="entry-title">', esc_url( get_permalink() ) ), '</h1>' ); ?>
 
-            <?php echo jeweltheme_polmo_post_meta_social();?>
-
             <?php echo jeweltheme_polmo_post_meta();?>
 
         </div>
@@ -27,7 +25,7 @@
     <div class="post-content">
         <div class="post-thumbnail">
             <?php if ( has_post_thumbnail() ) { 
-                $url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'blog-thumb' );
+                $url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'polmo-blog-thumb' );
                 ?>
                 <img src="<?php echo esc_url( $url[0] ); ?>" alt="<?php the_title();?>" />
             <?php } ?>
@@ -38,14 +36,14 @@
             
             <?php
                 wp_link_pages( array(
-                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'jeweltheme_memorials' ),
+                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'polmo-lite' ),
                     'after'  => '</div>',
                 ) );
             ?>
         </div><!-- .entry-content -->
         
         <?php 
-        $tags_list = get_the_tag_list( '', esc_html__( ', ', 'jeweltheme_polmo' ) );
+        $tags_list = get_the_tag_list( '', esc_html__( ', ', 'polmo-lite' ) );
         if( $tags_list ){ ?>
             <div class="post-tag">
                 <ul class="tag-list">
@@ -56,15 +54,14 @@
 
         <div class="author-bio-container media">
         	<div class="author-avatar media-left pull-left">
-        		<img class="img-circle media-boject" src="images/author.jpg" alt="Author Avatar">
+        		<?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
         	</div><!-- /.author-avatar -->
         	<div class="author-details media-body">
         		<div class="details-top">
-        			by <span class="author-name">Lition Arefin</span>
+        			<?php echo esc_html__('by', 'polmo-lite');?> <span class="author-name"><?php echo get_the_author_meta('display_name');?></span>
         		</div><!-- /.details-top -->
         		<p class="about-author">
-        			It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of 
-        			using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here,
+        			<?php echo get_the_author_meta('description');?>
         		</p><!-- /.about-author -->
         	</div><!-- /.author-details -->
         </div><!-- /.author-bio-container -->

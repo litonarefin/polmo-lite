@@ -17,31 +17,20 @@
         <div class="media-body">
             <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-            <?php echo jeweltheme_polmo_post_meta_social();?>
-
             <?php echo jeweltheme_polmo_post_meta();?>
 
         </div>
     </div><!-- /.post-head -->
 
     <div class="post-content">
-        <?php $quote =  jeweltheme_meta( '_jeweltheme_polmo_qoute' ); 
-        if( $quote ){ ?>
-            <div class="post-thumbnail">
-                <blockquote class="post-blockquote">
-                    <?php echo esc_attr( $quote ); ?>
-                    <span class="quot-author"> -  <?php echo jeweltheme_meta( '_jeweltheme_polmo_qoute_author' ); ?></span>
-                </blockquote>
-            </div>
-        <?php } ?>
 
         <p class="entry-content">
             <?php echo wp_trim_words( get_the_content(), 75, ' '  ); ?>
-            <a class="read-more" href="<?php the_permalink();?>"><?php echo esc_attr('Read More...','jeweltheme_polmo');?></a>
+            <a class="read-more" href="<?php the_permalink();?>"><?php echo esc_attr('Read More...','polmo-lite');?></a>
         </p><!-- /.entry-content -->
 
         <?php 
-        $tags_list = get_the_tag_list( '', esc_html__( ', ', 'jeweltheme_polmo' ) );
+        $tags_list = get_the_tag_list( '', esc_html__( ', ', 'polmo-lite' ) );
         if( $tags_list ){ ?>
             <div class="post-tag">
                 <ul class="tag-list">

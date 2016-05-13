@@ -1,63 +1,105 @@
 <?php
+$polmo_hide_slide = get_theme_mod('hide_slider', '1');
 
-$jeweltheme_polmo_slider_title1 = get_theme_mod('jeweltheme_polmo_slider_title1',__('Welcome to <span>Polmo</span>','jeweltheme_polmo'));
-$jeweltheme_polmo_slider_desc1 = get_theme_mod('jeweltheme_polmo_slider_desc1',__('POLMO theme is absolute free for your personal or business use','jeweltheme_polmo'));
-$jeweltheme_polmo_slider_button1 = get_theme_mod('jeweltheme_polmo_slider_button1',__('Download Polmo','jeweltheme_polmo'));
-$jeweltheme_polmo_slider_button_url1 = get_theme_mod('jeweltheme_polmo_slider_button_url1',__('http://jeweltheme.com/product/polmo-lite','jeweltheme_polmo'));
-$jeweltheme_polmo_slider_image1 = get_theme_mod('jeweltheme_polmo_slider_image1', get_template_directory_uri() . '/images/slider/1.jpg');
+if( $polmo_hide_slide == '' ){ ?>
 
-
-$jeweltheme_polmo_slider_title2 = get_theme_mod('jeweltheme_polmo_slider_title2',__('Premium <span>Quality WordPress</span> Theme','jeweltheme_polmo'));
-$jeweltheme_polmo_slider_desc2 = get_theme_mod('jeweltheme_polmo_slider_desc2',__('POLMO theme is absolute free for your personal or business use','jeweltheme_polmo'));
-$jeweltheme_polmo_slider_button2 = get_theme_mod('jeweltheme_polmo_slider_button2',__('Download Polmo','jeweltheme_polmo'));
-$jeweltheme_polmo_slider_button_url2 = get_theme_mod('jeweltheme_polmo_slider_button_url2',__('http://jeweltheme.com/product/polmo-lite','jeweltheme_polmo'));
-$jeweltheme_polmo_slider_image2 = get_theme_mod('jeweltheme_polmo_slider_image2', get_template_directory_uri() . '/images/slider/3.jpg');
-
+<?php for($slide =1; $slide<3; $slide++) {
+  if( get_theme_mod('page-setting'.$slide)) {
+  $slidequery = new WP_query('page_id='.get_theme_mod('page-setting'.$slide,true));
+  while( $slidequery->have_posts() ) { $slidequery->the_post();
+    $image = wp_get_attachment_url( get_post_thumbnail_id($post->ID));
+    $img_arr[] = $image;
+    $id_arr[] = $post->ID;
+      }
+    }
+  }
 ?>
+
+
+<?php if(!empty($id_arr)){ ?>
+
+  <section id="main-slider" class="main-slider text-center">
+    <div class="head-overlay">
+      <ul class="bxslider">
+        
+
+      <?php 
+      $i=1;
+      foreach($id_arr as $id){ 
+        $title = get_the_title( $id ); 
+        $post = get_post($id); 
+        ?>       
+
+
+        <li>
+          <div class="head-overlay">
+            <?php $image = wp_get_attachment_url( get_post_thumbnail_id($post->ID));
+            if( !empty($image) ){ ?>
+              <img src="<?php echo esc_url( $image ); ?>" alt="<?php the_title();?>" >
+            <?php } else{?>
+              <img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slider/default.jpg" title="<?php the_title(); ?>" />
+            <?php } ?>
+          </div><!-- /.head-overlay -->
+
+          <div class="slider-text">
+            <div class="slide-inner">            
+              <h2 class="slider-title" data-animation="wow animated bounceInDown"><?php echo $title; ?></h2>
+              <p class="slide-description">
+                <?php echo wp_trim_words( get_the_content(), 35, ' '  ); ?>
+              </p>
+              <div class="slide-btn-container">
+                <a class="btn" href="<?php the_permalink(); ?>">
+                  <?php echo esc_attr( 'Download Now!','polmo-lite' ); ?>
+                </a>
+              </div><!-- /.slide-btn-container -->
+            </div><!-- /.slide-inner -->
+          </div><!-- /.slider-text -->
+        </li>
+
+
+        <?php $i++; } ?>  
+      </ul>
+    </div><!-- /.head-overlay -->
+    
+    <div class="clear"></div>        
+
+  </section><!-- /#main-slider --> 
+
+<?php } else{ ?>
 
   <section id="main-slider" class="main-slider text-center">
     <div class="head-overlay">
       <ul class="bxslider">
         <li>
           <div class="head-overlay">
-
-          <?php if( !empty($jeweltheme_polmo_slider_image1) ){ ?>
-            <img src="<?php echo esc_url( $jeweltheme_polmo_slider_image1 ); ?>" alt="Slider Image 1"/>
-          <?php } ?>
-
+             <img src="<?php echo get_template_directory_uri() . '/images/slider/1.jpg'; ?>" alt="Slider 1"/>
           </div><!-- /.head-overlay -->
           <div class="slider-text">
             <div class="slide-inner">
-            <?php if ( !empty($jeweltheme_polmo_slider_title1) && !empty($jeweltheme_polmo_slider_desc1) && !empty($jeweltheme_polmo_slider_button1) && !empty($jeweltheme_polmo_slider_button_url1) ){ ?>
-              <h2 class="slider-title" data-animation="wow animated bounceInDown"><?php echo $jeweltheme_polmo_slider_title1; ?></h2>
-              <p class="slide-description"><?php echo $jeweltheme_polmo_slider_desc1; ?></p>
+            
+              <h2 class="slider-title" data-animation="wow animated bounceInDown"><?php echo __('Welcome to <span>Polmo Lite</span>','polmo-lite'); ?></h2>
+              <p class="slide-description"><?php echo __('Lorem ipsum dolor sit amet, consectetur adipisicing elit','polmo-lite'); ?></p>
               <div class="slide-btn-container">
-                <a class="btn" href="<?php echo esc_url( $jeweltheme_polmo_slider_button_url1 ); ?>">
-                  <?php echo $jeweltheme_polmo_slider_button1; ?>
+                <a class="btn" href="<?php echo esc_url('#','polmo-lite'); ?>">
+                  <?php echo __('Download','polmo-lite'); ?>
                 </a>
               </div><!-- /.slide-btn-container -->
-            <?php } ?>
-              
-
+            
             </div><!-- /.slide-inner -->
           </div><!-- /.slider-text -->
         </li>
         <li>
           <div class="head-overlay">
-            <?php if( !empty($jeweltheme_polmo_slider_image2) ){ ?>
-              <img src="<?php echo esc_url( $jeweltheme_polmo_slider_image2 ); ?>"/>
-            <?php } ?>
+              <img src="<?php echo get_template_directory_uri() . '/images/slider/3.jpg'; ?>" alt="Slider 2"/>
           </div><!-- /.head-overlay -->
           <div class="slider-text">
             <div class="slide-inner">
 
-            <?php if ( !empty($jeweltheme_polmo_slider_title2) && !empty($jeweltheme_polmo_slider_desc2) && !empty($jeweltheme_polmo_slider_button2) && !empty($jeweltheme_polmo_slider_button_url2) ){ ?>
-              <h2 class="slider-title"><?php echo $jeweltheme_polmo_slider_title2; ?></h2>
-              <p class="slide-description"><?php echo $jeweltheme_polmo_slider_desc2; ?></p>
+              <h2 class="slider-title"><?php echo __('Ut enim ad minim <span>veniam </span> quis nostrud','polmo-lite'); ?></h2>
+              <p class="slide-description"><?php echo __('Consectetur adipisicing elit, sed do eiusmod','polmo-lite'); ?></p>
               <div class="slide-btn-container">
-                <a class="btn" href="<?php echo esc_url( $jeweltheme_polmo_slider_button_url2 ); ?>"><?php echo $jeweltheme_polmo_slider_button2; ?></a>
+                <a class="btn" href="<?php echo esc_url('#','polmo-lite' ); ?>"><?php echo __('Download','polmo-lite'); ?></a>
               </div><!-- /.slide-btn-container -->
-            <?php } ?>  
 
             </div><!-- /.slide-inner -->
           </div><!-- /.slider-text -->
@@ -65,3 +107,5 @@ $jeweltheme_polmo_slider_image2 = get_theme_mod('jeweltheme_polmo_slider_image2'
       </ul>
     </div><!-- /.head-overlay -->
   </section><!-- /#main-slider --> 
+
+<?php } } ?>

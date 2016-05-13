@@ -1,6 +1,6 @@
 <?php 
-$jeweltheme_polmo_map_contact_heading = get_theme_mod('jeweltheme_polmo_map_contact_heading',__('<span>Contact</span> With Us','jeweltheme_polmo'));
-$jeweltheme_polmo_map_contact_shortcode = get_theme_mod('jeweltheme_polmo_map_contact_shortcode',__('[contact-form-7 id="1234" title="Contact form 1"]','jeweltheme_polmo'));
+$jeweltheme_polmo_contact_heading = get_theme_mod('jeweltheme_polmo_contact_heading',__('<span>Contact</span> With Us','polmo-lite'));
+$jeweltheme_polmo_contact_shortcode = get_theme_mod('jeweltheme_polmo_contact_shortcode',"");
 ?>
 
   <section id="contact" class="contact">
@@ -9,15 +9,15 @@ $jeweltheme_polmo_map_contact_shortcode = get_theme_mod('jeweltheme_polmo_map_co
         <div id="googleMaps" class="google-map-container"></div>
       </div><!-- /#google-map -->
 
-      <div class="form-area text-center wow animated fadeInRight" data-wow-delay=".75s">
-        <?php if ( !empty($jeweltheme_polmo_map_contact_heading) ){ ?>
+      <div class="form-area col-sm-12 text-center wow animated fadeInRight" data-wow-delay=".75s">
+        <?php if ( !empty($jeweltheme_polmo_contact_heading) ){ ?>
           <h2 class="section-title">
-            <?php echo $jeweltheme_polmo_map_contact_heading; ?>
+            <?php echo wp_kses_post( $jeweltheme_polmo_contact_heading ); ?>
           </h2><!-- /.section-title -->
         <?php } ?>
 
-        <?php if ( !empty($jeweltheme_polmo_map_contact_shortcode) ){ ?>
-            <?php echo do_shortcode( $jeweltheme_polmo_map_contact_shortcode ); ?>
+        <?php if ( !empty($jeweltheme_polmo_contact_shortcode) ){ ?>
+            <?php echo do_shortcode( $jeweltheme_polmo_contact_shortcode ); ?>
         <?php } ?>
 
       </div><!-- /.form-area -->

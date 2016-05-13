@@ -28,40 +28,29 @@
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
 					<i class="fa fa-bars"></i>
 				</button>
-				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<?php
+					<?php jeweltheme_polmo_the_custom_logo(); ?>
 
-					$jeweltheme_polmo_logo = get_theme_mod('jeweltheme_polmo_logo');
-
-					if(isset($jeweltheme_polmo_logo) && $jeweltheme_polmo_logo != ""){ ?>				
-						
-						<img src="<?php echo esc_url( $jeweltheme_polmo_logo );?>" alt="<?php echo get_bloginfo('title');?>">				
-
-					<?php } else{ 
-						
-								if( file_exists(get_stylesheet_directory()."/images/logo.png")){
-
-									echo '<img src="'.get_stylesheet_directory_uri().'/images/logo.png" alt="'.get_bloginfo('title').'">';				
-
-								} else{
-
-									echo '<img src="'.get_stylesheet_directory_uri().'/images/logo.png" alt="'.get_bloginfo('title').'">';
-
-								}
-						}
-					?>
-				</a>					
+					<?php if ( is_front_page() && is_home() ) : ?>
+						<h1 class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<h1 class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php endif; 
+					$description = get_bloginfo( 'description', 'display' );
+					if ( $description || is_customize_preview() ) : ?>
+						<p class="site-description"><?php echo $description; ?></p>
+					<?php endif;
+					?>				
 			</div>
 
 
 			<nav id="main-menu" class="collapse navbar-collapse pull-right">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#main-slider">Home</a></li>
-					<li><a href="#services">Services</a></li>
-					<li><a href="#about">About Us</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
-					<li><a href="#blog">Blog</a></li>
-					<li><a href="#contact">Contact us</a></li>
+					<li class="active"><a href="#main-slider"><?php echo esc_html('Home','polmo-lite');?></a></li>
+					<li><a href="#services"><?php echo esc_html('Services','polmo-lite');?></a></li>
+					<li><a href="#about"><?php echo esc_html('About Us','polmo-lite');?></a></li>
+					<li><a href="#portfolio"><?php echo esc_html('Portfolio','polmo-lite');?></a></li>
+					<li><a href="#blog"><?php echo esc_html('Blog','polmo-lite');?></a></li>
+					<li><a href="#contact"><?php echo esc_html('Contact us','polmo-lite');?></a></li>
 				</ul>
 			</nav> <!-- /.navbar-collapse  -->
 
