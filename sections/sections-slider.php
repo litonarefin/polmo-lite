@@ -10,8 +10,8 @@ if( $polmo_hide_slide == '' ){ ?>
     $image = wp_get_attachment_url( get_post_thumbnail_id($post->ID));
     $img_arr[] = $image;
     $id_arr[] = $post->ID;
-      }
-    }
+      
+}    }
   }
 ?>
 
@@ -45,7 +45,7 @@ if( $polmo_hide_slide == '' ){ ?>
             <div class="slide-inner">            
               <h2 class="slider-title" data-animation="wow animated bounceInDown"><?php echo $title; ?></h2>
               <p class="slide-description">
-                <?php echo wp_trim_words( get_the_content(), 35, ' '  ); ?>
+                <?php the_excerpt(); ?>
               </p>
               <div class="slide-btn-container">
                 <a class="btn" href="<?php the_permalink(); ?>">
@@ -65,47 +65,8 @@ if( $polmo_hide_slide == '' ){ ?>
 
   </section><!-- /#main-slider --> 
 
-<?php } else{ ?>
-
-  <section id="main-slider" class="main-slider text-center">
-    <div class="head-overlay">
-      <ul class="bxslider">
-        <li>
-          <div class="head-overlay">
-             <img src="<?php echo get_template_directory_uri() . '/images/slider/1.jpg'; ?>" alt="Slider 1"/>
-          </div><!-- /.head-overlay -->
-          <div class="slider-text">
-            <div class="slide-inner">
-            
-              <h2 class="slider-title" data-animation="wow animated bounceInDown"><?php echo __('Welcome to <span>Polmo Lite</span>','polmo-lite'); ?></h2>
-              <p class="slide-description"><?php echo __('Lorem ipsum dolor sit amet, consectetur adipisicing elit','polmo-lite'); ?></p>
-              <div class="slide-btn-container">
-                <a class="btn" href="<?php echo esc_url('#','polmo-lite'); ?>">
-                  <?php echo __('Download','polmo-lite'); ?>
-                </a>
-              </div><!-- /.slide-btn-container -->
-            
-            </div><!-- /.slide-inner -->
-          </div><!-- /.slider-text -->
-        </li>
-        <li>
-          <div class="head-overlay">
-              <img src="<?php echo get_template_directory_uri() . '/images/slider/3.jpg'; ?>" alt="Slider 2"/>
-          </div><!-- /.head-overlay -->
-          <div class="slider-text">
-            <div class="slide-inner">
-
-              <h2 class="slider-title"><?php echo __('Ut enim ad minim <span>veniam </span> quis nostrud','polmo-lite'); ?></h2>
-              <p class="slide-description"><?php echo __('Consectetur adipisicing elit, sed do eiusmod','polmo-lite'); ?></p>
-              <div class="slide-btn-container">
-                <a class="btn" href="<?php echo esc_url('#','polmo-lite' ); ?>"><?php echo __('Download','polmo-lite'); ?></a>
-              </div><!-- /.slide-btn-container -->
-
-            </div><!-- /.slide-inner -->
-          </div><!-- /.slider-text -->
-        </li>
-      </ul>
-    </div><!-- /.head-overlay -->
-  </section><!-- /#main-slider --> 
-
-<?php } } ?>
+<?php } else{ 
+          if ( current_user_can( 'edit_theme_options' ) ){
+              printf( __( 'There is Nothing to Show. Please Create a <a href="%s">New Page</a>? <br>', 'polmo-lite' ), esc_url( admin_url( 'post-new.php?post_type=page' ) ));
+          }
+  } } ?>

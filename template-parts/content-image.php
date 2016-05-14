@@ -30,7 +30,7 @@
             <?php } ?>
         </div><!-- /.post-thumbnail -->
         <p class="entry-content">
-            <?php echo wp_trim_words( get_the_content(), 75, ' '  ); ?>
+            <?php the_excerpt(); ?>
             <a class="read-more" href="<?php the_permalink();?>"><?php echo esc_attr('Read More...','polmo-lite');?></a>
         </p><!-- /.entry-content -->
 

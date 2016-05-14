@@ -48,7 +48,7 @@ $jeweltheme_polmo_blog_heading = get_theme_mod('jeweltheme_polmo_blog_heading',_
                           </a>
                         </h4><!-- /.entry-title -->
                         <p class="entry-content">
-                          <?php echo wp_trim_words( get_the_content(), 35, ' '  ); ?>
+                          <?php the_excerpt(); ?>
                         </p><!-- /.entry-content -->
                       </div><!-- /.post-content -->
                     </article><!-- /.type-post -->

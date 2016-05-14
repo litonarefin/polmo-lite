@@ -14,7 +14,7 @@
                 <?php echo jeweltheme_ateam_entry_post_meta();?>
 
                 <p>
-                    <?php echo wp_trim_words( get_the_content(), 35, ' '  ); ?>
+                    <?php the_excerpt(); ?>
                 </p>
 
                 <div class="btn-container default">

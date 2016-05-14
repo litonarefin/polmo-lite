@@ -1,7 +1,4 @@
 <?php 
-    $jeweltheme_polmo_service_heading_title = get_theme_mod('jeweltheme_polmo_service_heading_title',__('<span>Polmo</span> Core Services','polmo-lite'));
-    $jeweltheme_polmo_service_desc = get_theme_mod('jeweltheme_polmo_service_desc',__('Matter is made up of atoms having dimensions approximately determined to be in the neighbourhood of the one fifty-millionth of an inch in diameter.','polmo-lite'));
-
 
     $hide_services = get_theme_mod('hide_services', '1');
     
@@ -57,30 +54,11 @@
               ?>
               <?php } else { 
 
+                  if ( current_user_can( 'edit_theme_options' ) ){
+                      printf( __( 'There is Nothing to Show. Please Create a <a href="%s">New Page</a>? <br>', 'polmo-lite' ), esc_url( admin_url( 'post-new.php?post_type=page' ) ));
+                  }
 
-                    $icons = array( "", "fa-android", "fa-html5", "fa-maxcdn", "fa-umbrella");
-                    $title = array( "", "Android Apps Developement", "HTML5 Modern Technology", "Latest Max CDN Service", "Latest Umbrella Server" );
-                    $desc  = array( "", 
-                                    "Atoms dimensions approximately determined with one fifty-millionth an inch in diameter.",
-                                    "Continuity as distinguished from may be considering what would be visible by magnification.",
-                                    "Definite amount of matter in visible universe, a number of molecules and atoms in huge number.",
-                                    "Phenomena of light and waves of all lengths are found in velocity of 186,000 miles in a second."
-                                    );
-                ?>
-              
-                <div class="col-md-3 col-sm-6">
-                  <div class="item wow animated fadeInLeft" data-wow-delay=".5s">
-                      <div class="item-icon">
-                        <i class="fa <?php  echo $icons[$is]; ?>"></i>
-                      </div><!-- /.item-icon -->
-                      <div class="item-details">
-                        <h4 class="item-title"><?php  echo $title[$is]; ?></h4><!-- /.item-title -->
-                        <p class="item-description"><?php  echo $desc[$is]; ?></p><!-- /.item-description -->
-                      </div><!-- /.item-details -->
-                  </div><!-- /.item -->
-                </div>
-             <?php 
-            }
+              }
            } // End for loop ?>
 
 

@@ -25,7 +25,7 @@
 
         <div class="entry-content">
             <p>
-                <?php echo wp_trim_words( get_the_content(), 55, ' '  ); ?>
+                <?php the_excerpt(); ?>
             </p>
             
             <?php

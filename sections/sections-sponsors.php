@@ -38,56 +38,10 @@ if( $hide_sponsor == ''){
       </div><!-- /.section-pattern -->
     </section><!-- /#sponsors -->
 
-<?php } }  wp_reset_postdata(); } else { ?>
-
-    <section id="sponsors" class="sponsors text-center" data-stellar-background-ratio="0.1" data-stellar-vertical-offset="0">
-      <div class="section-pattern">
-        <div class="section-padding">
-          <div class="container">
-            <div class="row">
-              <div class="wow animated fadeInUp" data-wow-delay=".5s">
-              <?php if ( !empty($jeweltheme_polmo_sponsors_title) ){ ?>
-                <h2 class="section-title">
-                  <?php echo  $jeweltheme_polmo_sponsors_title; ?>
-                </h2><!-- /.section-title -->
-              <?php } ?>
-
-                <div class="section-details">
-                  <div class="sponsors-logo">             
-
-                    <?php
-                    $sponsor_images = array( 
-                                          get_template_directory_uri() . '/images/sponsors/1.png',
-                                          get_template_directory_uri() . '/images/sponsors/2.png',
-                                          get_template_directory_uri() . '/images/sponsors/3.png',
-                                          get_template_directory_uri() . '/images/sponsors/1.png'
-                      );
-
-                    $sponsor_links = array(
-                        "#",
-                        "#",
-                        "#",
-                        "#"
-                      );
-
-                    for ( $s=0; $s<4; $s++ ) { ?>
-                    
-                      <div class="col-sm-3 col-xs-6">
-                        <a href="<?php echo $sponsor_links[$s]; ?>" target="_blank"><img src="<?php echo $sponsor_images[$s]; ?>" alt="Sponsors Logo"></a>
-                      </div> 
-
-                    <?php } ?>
-
-                  </div><!-- /.sponsors-logo -->
-                </div><!-- /.section-details -->
-              </div>
-            </div><!-- /.row -->
-          </div><!-- /.container -->
-        </div><!-- /.section-padding -->
-      </div><!-- /.section-pattern -->
-    </section><!-- /#sponsors -->
-
-
-<?php }
+<?php } }  wp_reset_postdata(); } else { 
+          if ( current_user_can( 'edit_theme_options' ) ){
+              printf( __( 'There is Nothing to Show. Please Create a <a href="%s">New Page</a>? <br>', 'polmo-lite' ), esc_url( admin_url( 'post-new.php?post_type=page' ) ));
+          }
+     }
   }
 ?>

@@ -36,7 +36,7 @@ $testimonials = jeweltheme_polmo_get_custom_posts( $jeweltheme_polmo_testimonial
                 ?>
                   <div class="item <?php echo ( ($key == 0) ? "active" : "" );?>">
                     <blockquote class="client-quote">
-                      <?php echo wp_trim_words( get_the_content(), 35, ' '  ); ?>
+                      <?php the_excerpt(); ?>
                     </blockquote><!-- /.client-quote -->
                   </div><!-- /.item -->
                 <?php 

@@ -14,6 +14,7 @@ define('JWCSS', get_template_directory_uri().'/assets/css/');
 
 define('JWJS', get_template_directory_uri().'/assets/js/');
 
+define('JWT_FEATURED_EMAGE','https://www.youtube.com/watch?v=qZ92n79Ul5A','polmo-lite');
 
 if ( ! function_exists( 'polmo_setup' ) ) {
 /**
@@ -180,8 +181,8 @@ function polmo_lite_scripts() {
 
 			//JS
 			wp_enqueue_script( 'modernizr', JWJS . 'modernizr-2.8.3-respond-1.4.2.min.js', array(), '', false );
-			wp_enqueue_script( 'wow.min', JWJS . 'wow.js', array(), '', true );
-			wp_enqueue_script( 'waypoints', JWJS . 'waypoints.min.js', array(), '', true );
+			wp_enqueue_script( 'wow', JWJS . 'wow.js', array(), '', true );
+			wp_enqueue_script( 'waypoints', JWJS . 'waypoints.js', array(), '', true );
 			wp_enqueue_script( 'polmo-custom.min', JWJS . 'custom.min.js', array(), '', true );	
 
 		} else {
@@ -194,19 +195,18 @@ function polmo_lite_scripts() {
 			wp_enqueue_style( 'polmo-theme', JWCSS . 'theme.css');
 			wp_enqueue_style( 'polmo-responsive', JWCSS . 'responsive.min.css');
 
-			//Google Fonts
-			wp_register_style('googleFontsLato','http://fonts.googleapis.com/css?family=Lato:300,400,700,900');
-			wp_enqueue_style( 'googleFontsLato'); 
+			//Google Fonts			
+			wp_register_style('polmo-googleFontsLato','//fonts.googleapis.com/css?family=Lato:300,400,700,900');
+			wp_enqueue_style( 'polmo-googleFontsLato'); 
 
-			wp_register_style('googleFontsLatoBelgrano','http://fonts.googleapis.com/css?family=Belgrano');
-			wp_enqueue_style( 'googleFontsLatoBelgrano');
-			
+			wp_register_style('polmo-googleFontsLatoBelgrano','//fonts.googleapis.com/css?family=Belgrano');
+			wp_enqueue_style( 'polmo-googleFontsLatoBelgrano');
 
 			//JS
 			wp_enqueue_script( 'modernizr', JWJS . 'modernizr-2.8.3-respond-1.4.2.min.js', array(), '', false );
 			wp_enqueue_script( 'polmo-custom.min', JWJS . 'custom.min.js', array(), '', true );
-			wp_enqueue_script( 'wow.min', JWJS . 'wow.min.js', array(), '', true );			
-			wp_enqueue_script( 'waypoints', JWJS . 'waypoints.min.js', array(), '', true );
+			wp_enqueue_script( 'wow', JWJS . 'wow.js', array(), '', true );		
+			wp_enqueue_script( 'waypoints', JWJS . 'waypoints.js', array(), '', true );
 			
 			
 		}
