@@ -7,6 +7,7 @@
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+#[Demo](http://wordpress.jeweltheme.com/polmo)
 
 "Polmo Lite" a simple WordPress Theme For any type of Business, Portfolio or Service based Websites. Polmo is one of the best Free WordPress Theme for user because of it's flexiblity and customization features. 
 
