@@ -1,13 +1,7 @@
 ![Polmo Free WordPress Theme](http://wordpress.jeweltheme.com/polmo/wp-content/uploads/sites/2/2015/11/logo-1.png)
 
-# Polmo Free WordPress Theme
-* Tags: WordPress, Theme, Freebie, Business, Website, Design, Template,
-* Requires at least: WordPress 4.0+
-* Donate link: https://goo.gl/dko6p7
-* License: GPLv2 or later
-* License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-#[Demo](http://wordpress.jeweltheme.com/polmo)
+## [Polmo Lite](https://jeweltheme.com/shop/polmo-lite/) ##
+## [Demo](http://wordpress.jeweltheme.com/polmo) ##
 
 "Polmo Lite" a simple WordPress Theme For any type of Business, Portfolio or Service based Websites. Polmo is one of the best Free WordPress Theme for user because of it's flexiblity and customization features. 
 
